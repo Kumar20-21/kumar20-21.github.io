@@ -3,236 +3,322 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keshav Kumar - Quantitative Researcher</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Keshav Kumar - Quantitative Researcher & Academic specializing in machine learning and quantitative finance">
+    <meta name="keywords" content="quantitative research, machine learning, academic, finance, research fellow">
+    <title>Keshav Kumar - Quantitative Researcher & Academic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-    <!-- Navigation -->
-    <nav class="bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <div class="text-xl font-bold">Keshav Kumar</div>
-                <div class="hidden md:flex space-x-8">
-                    <button onclick="showTab('home')" class="nav-btn text-blue-600 border-b-2 border-blue-600">Home</button>
-                    <button onclick="showTab('about')" class="nav-btn hover:text-blue-600">About Me</button>
-                    <button onclick="showTab('projects')" class="nav-btn hover:text-blue-600">Projects</button>
-                    <button onclick="showTab('publications')" class="nav-btn hover:text-blue-600">Publications</button>
-                    <button onclick="showTab('blog')" class="nav-btn hover:text-blue-600">Blog</button>
-                    <button onclick="showTab('conference-tracker')" class="nav-btn hover:text-blue-600">Conference Tracker</button>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="#" class="nav__logo" data-page="home">KK</a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <button class="nav__link active" data-page="home">Home</button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="nav__link" data-page="about">About Me</button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="nav__link" data-page="projects">Projects</button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="nav__link" data-page="publications">Publications</button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="nav__link" data-page="blog">Blog</button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="nav__link" data-page="conference-tracker">Conference Tracker</button>
+                    </li>
+                </ul>
+                
+                <div class="nav__close" id="nav-close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
                 </div>
-                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-                    <i class="fas fa-moon dark:hidden"></i>
-                    <i class="fas fa-sun hidden dark:inline"></i>
+            </div>
+            
+            <div class="nav__actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <svg class="theme-icon moon-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
                 </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Home Tab -->
-    <div id="home" class="tab-content">
-        <div class="max-w-6xl mx-auto px-4 py-16">
-            <div class="text-center">
-                <div class="w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mb-8"></div>
-                <h1 class="text-4xl md:text-6xl font-bold mb-4">Keshav Kumar</h1>
-                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8">Quantitative Researcher & ML Engineer</p>
-                <p class="text-lg max-w-2xl mx-auto mb-8 text-gray-700 dark:text-gray-300">
-                    Specializing in Reinforcement Learning applications in Quantitative Finance, Multi-Agent Systems, and Computational Finance.
-                </p>
-                <button onclick="showContactPage()" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-300">
-                    Get in Touch
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- About Me Tab -->
-    <div id="about" class="tab-content hidden">
-        <div class="max-w-4xl mx-auto px-4 py-16">
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-                <h2 class="text-3xl font-bold mb-6">About Me</h2>
-                <div class="space-y-6">
-                    <p class="text-lg text-gray-700 dark:text-gray-300">
-                        I am a passionate researcher working at the intersection of reinforcement learning and quantitative finance. 
-                        My work focuses on developing intelligent systems for financial decision-making and risk management.
-                    </p>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3">Research Interests</h3>
-                        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                            <li>Reinforcement Learning in Finance</li>
-                            <li>Multi-Agent Systems</li>
-                            <li>Algorithmic Trading</li>
-                            <li>Risk Management</li>
-                            <li>Portfolio Optimization</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3">Education</h3>
-                        <p class="text-gray-700 dark:text-gray-300">
-                            [Your education details here]
-                        </p>
-                    </div>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
                 </div>
             </div>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <!-- Projects Tab -->
-    <div id="projects" class="tab-content hidden">
-        <div class="max-w-4xl mx-auto px-4 py-16">
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
-                <h2 class="text-3xl font-bold mb-6">Projects</h2>
-                <div class="text-6xl mb-6">🚧</div>
-                <p class="text-xl text-gray-600 dark:text-gray-400">This page is under construction</p>
-                <p class="text-gray-500 dark:text-gray-500 mt-4">Check back soon for updates!</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Publications Tab -->
-    <div id="publications" class="tab-content hidden">
-        <div class="max-w-4xl mx-auto px-4 py-16">
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
-                <h2 class="text-3xl font-bold mb-6">Publications</h2>
-                <div class="text-6xl mb-6">🚧</div>
-                <p class="text-xl text-gray-600 dark:text-gray-400">This page is under construction</p>
-                <p class="text-gray-500 dark:text-gray-500 mt-4">Check back soon for updates!</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Blog Tab -->
-    <div id="blog" class="tab-content hidden">
-        <div class="max-w-4xl mx-auto px-4 py-16">
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
-                <h2 class="text-3xl font-bold mb-6">Blog</h2>
-                <div class="text-6xl mb-6">🚧</div>
-                <p class="text-xl text-gray-600 dark:text-gray-400">This page is under construction</p>
-                <p class="text-gray-500 dark:text-gray-500 mt-4">Check back soon for updates!</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Conference Tracker Tab -->
-    <div id="conference-tracker" class="tab-content hidden">
-        <div class="max-w-4xl mx-auto px-4 py-16">
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-                <h2 class="text-3xl font-bold mb-6">Conference Tracker</h2>
-                <div class="space-y-6">
-                    <p class="text-lg text-gray-700 dark:text-gray-300">
-                        A comprehensive deadline tracking system for top-tier conferences and journals in 
-                        Reinforcement Learning and Quantitative Finance.
-                    </p>
-                    <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-4">Features</h3>
-                        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                            <li>Real-time deadline tracking for A+ and A-ranked conferences</li>
-                            <li>Q1 journal submission deadlines</li>
-                            <li>Filtering by research area and venue type</li>
-                            <li>Countdown timers and notifications</li>
-                        </ul>
-                    </div>
-                    <div class="text-center">
-                        <a href="https://kumar20-21.github.io/conference_dealines/" 
-                           target="_blank" 
-                           class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-300 inline-block">
-                            Visit Conference Tracker
-                            <i class="fas fa-external-link-alt ml-2"></i>
-                        </a>
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Page -->
+        <div class="page active" id="home-page">
+            <section class="hero">
+                <div class="hero__container container">
+                    <div class="hero__content">
+                        <div class="hero__greeting">Hello, I'm</div>
+                        <h1 class="hero__name">Keshav Kumar</h1>
+                        <p class="hero__title">Quantitative Researcher & Academic</p>
+                        <p class="hero__description">Building intelligent systems at the intersection of AI and finance. Specializing in machine learning applications for quantitative research and financial modeling.</p>
+                        
+                        <div class="hero__actions">
+                            <button class="btn btn--primary" data-page="about">Get In Touch</button>
+                            <button class="btn btn--outline" data-page="projects">View Work</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-    </div>
 
-    <!-- Connect with Me Page (Hidden by default) -->
-    <div id="connect" class="tab-content hidden">
-        <div class="max-w-4xl mx-auto px-4 py-16">
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-                <h2 class="text-3xl font-bold mb-8 text-center">Connect with Me</h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <!-- Email -->
-                    <a href="mailto:kksy1996sc@gmail.com" class="contact-card bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300">
-                        <div class="flex items-center space-x-4">
-                            <div class="text-3xl text-red-600">
-                                <i class="fas fa-envelope"></i>
+        <!-- About Page -->
+        <div class="page" id="about-page">
+            <section class="about-section">
+                <div class="container">
+                    <!--div class="section__header">
+                        <h2 class="section__title">About Me</h2>
+                        <p class="section__subtitle">Research and Academic Background</p>
+                </div-->
+                    
+                    <div class="about__container">
+                        <div class="about__content">
+                            <div class="about__bio">
+                                <p>I am a quantitative researcher and academic focused on machine learning applications in finance. My work bridges the gap between theoretical research and practical implementations in quantitative finance and algorithmic trading.</p>
+                                <p>Currently pursuing cutting-edge research in reinforcement learning for high-frequency optimal execution, with a focus on developing scalable systems that can be applied in both academic and industry settings.</p>
                             </div>
-                            <div>
-                                <h3 class="text-lg font-semibold">Email</h3>
-                                <p class="text-gray-600 dark:text-gray-400">kksy1996sc@gmail.com</p>
+                            
+                            <div class="about__info">
+                                <div class="about__info-item">
+                                    <span class="about__info-label">Research Focus</span>
+                                    <span class="about__info-value">Quantitative Finance & Reinforcement Learning</span>
+                                </div>
+                                <div class="about__info-item">
+                                    <span class="about__info-label">Specialization</span>
+                                    <span class="about__info-value">Algorithmic Trading & Risk Management</span>
+                                </div>
+                                <div class="about__info-item">
+                                    <span class="about__info-label">Email</span>
+                                    <span class="about__info-value">kksy1996sc@gmail.com</span>
+                                </div>
+                            </div>
+
+                            <!-- Contact Section -->
+                            <div class="contact__section">
+                                <h3>Connect With Me</h3>
+                                <div class="social-links">
+                                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.196.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" fill="currentColor"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Google Scholar">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M21.328 2.002v9.2M8.695 13.001l6.632-3.3m-3.698.72c0-2.185 1.735-3.96 3.88-3.96s3.88 1.775 3.88 3.96-1.735 3.96-3.88 3.96-3.88-1.775-3.88-3.96zM10.545 13.001v7.329c0 .537.435.97.97.97h1.94a.97.97 0 0 0 .97-.97v-7.329" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 2.002c5.523 0 10 4.477 10 10s-4.477 10-10 10-10-4.477-10-10 4.477-10 10-10z" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/keshavkumar2021/" target="https://www.linkedin.com/in/keshavkumar2021/" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2"/>
+                                            <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/>
+                                            <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://github.com/Kumar20-21" target="https://github.com/Kumar20-21" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </a>
-
-                    <!-- LinkedIn -->
-                    <a href="https://linkedin.com/in/keshavkumar2021" target="_blank" class="contact-card bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300">
-                        <div class="flex items-center space-x-4">
-                            <div class="text-3xl text-blue-600">
-                                <i class="fab fa-linkedin"></i>
+                        <!--
+                        <div class="about__sidebar">
+                            <div class="education">
+                                <h3 class="education__title">Education</h3>
+                                <div class="education__timeline">
+                                    <p class="placeholder-text">Placeholder for educational background - detailed academic credentials will be added here.</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="text-lg font-semibold">LinkedIn</h3>
-                                <p class="text-gray-600 dark:text-gray-400">Professional Network</p>
+                            
+                            <div class="research">
+                                <h3 class="research__title">Research Interests</h3>
+                                <div class="research__content">
+                                    <p class="placeholder-text">Placeholder for research interests in quantitative finance and machine learning applications.</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-
-                    <!-- GitHub -->
-                    <a href="https://github.com/Kumar20-21" target="_blank" class="contact-card bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300">
-                        <div class="flex items-center space-x-4">
-                            <div class="text-3xl text-gray-800 dark:text-gray-200">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold">GitHub</h3>
-                                <p class="text-gray-600 dark:text-gray-400">Code Repository</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Google Scholar -->
-                    <a href="#" target="_blank" class="contact-card bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300">
-                        <div class="flex items-center space-x-4">
-                            <div class="text-3xl text-green-600">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold">Google Scholar</h3>
-                                <p class="text-gray-600 dark:text-gray-400">Academic Publications</p>
+                            -->
+                            <div class="skills">
+                                <h3 class="skills__title">Technical Skills</h3>
+                                <div class="skills__grid">
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">R</span>
+                                    <span class="skill-tag">MATLAB</span>
+                                    <span class="skill-tag">PyTorch</span>
+                                    <span class="skill-tag">TensorFlow</span>
+                                    <span class="skill-tag">Quantlib</span>
+                                    <span class="skill-tag">Docker</span>
+                                    <span class="skill-tag">Git</span>
+                                </div>
                             </div>
                         </div>
-                    </a>
-
-                    <!-- Discord -->
-                    <a href="#" target="_blank" class="contact-card bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300">
-                        <div class="flex items-center space-x-4">
-                            <div class="text-3xl text-purple-600">
-                                <i class="fab fa-discord"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold">Discord</h3>
-                                <p class="text-gray-600 dark:text-gray-400">Community Chat</p>
-                            </div>
-                        </div>
-                    </a>
+                    </div>
                 </div>
-                <div class="text-center mt-8">
-                    <button onclick="showTab('home')" class="text-blue-600 hover:text-blue-700 font-semibold">
-                        <i class="fas fa-arrow-left mr-2"></i>Back to Home
-                    </button>
-                </div>
-            </div>
+            </section>
         </div>
-    </div>
+
+        <!-- Projects Page -->
+        <div class="page" id="projects-page">
+            <section class="construction-section">
+                <div class="container">
+                    <div class="construction-content">
+                        <div class="construction-icon">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h2 class="construction-title">Projects</h2>
+                        <p class="construction-message">This page is under construction</p>
+                        <p class="construction-description">My project portfolio showcasing quantitative research implementations, trading algorithms, and machine learning applications will be available here soon.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Publications Page -->
+        <div class="page" id="publications-page">
+            <section class="construction-section">
+                <div class="container">
+                    <div class="construction-content">
+                        <div class="construction-icon">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 7h8M8 11h8M8 15h5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h2 class="construction-title">Publications</h2>
+                        <p class="construction-message">This page is under construction</p>
+                        <p class="construction-description">My academic publications in quantitative finance, machine learning, and related fields will be catalogued here.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Blog Page -->
+        <div class="page" id="blog-page">
+            <section class="construction-section">
+                <div class="container">
+                    <div class="construction-content">
+                        <div class="construction-icon">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                                <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+                                <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h2 class="construction-title">Blog</h2>
+                        <p class="construction-message">This page is under construction</p>
+                        <p class="construction-description">Insights on quantitative research, market analysis, and academic perspectives on financial technology will be shared here.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Conference Tracker Page -->
+        <div class="page" id="conference-tracker-page">
+            <section class="conference-tracker-section">
+                <div class="container">
+                    <div class="section__header">
+                        <h2 class="section__title">Conference Tracker</h2>
+                        <p class="section__subtitle">Track deadlines for top-tier conferences and journals in quantitative finance and machine learning</p>
+                    </div>
+                    
+                    <div class="conference-tracker-content">
+                        <div class="tracker-description">
+                            <p>Stay updated with important conference deadlines in quantitative finance, machine learning, and related fields. This tool helps researchers and academics manage submission timelines for prestigious venues.</p>
+                        </div>
+                        
+                        <div class="tracker-action">
+                            <a href="https://kumar20-21.github.io/conference_dealines/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">
+                                <span>Access Conference Tracker</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <line x1="7" y1="17" x2="17" y2="7" stroke="currentColor" stroke-width="2"/>
+                                    <polyline points="7,7 17,7 17,17" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </a>
+                        </div>
+                        
+                        <div class="tracker-features">
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                            <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <h4>Real-time Countdown</h4>
+                                    <p>Live countdown timers for upcoming deadlines</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46 22,3" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <h4>Smart Filtering</h4>
+                                    <p>Filter by venue type, field, and deadline proximity</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" stroke-width="2"/>
+                                            <polyline points="17,8 12,3 7,8" stroke="currentColor" stroke-width="2"/>
+                                            <line x1="12" y1="3" x2="12" y2="15" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <h4>Regular Updates</h4>
+                                    <p>Automatically updated conference information</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-6">
-        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
-            <div class="text-sm text-gray-600 dark:text-gray-400">
-                &copy; 2025 Copyright: Keshav Kumar. All rights reserved.
-            </div>
-            <div class="text-sm text-gray-600 dark:text-gray-400">
-                Built with ❤️ by Keshav Kumar
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__left">
+                    <p>&copy; 2025 Copyright: Keshav Kumar. All rights reserved</p>
+                </div>
+                <div class="footer__right">
+                    <p>Built with ❤️ by Keshav Kumar</p>
+                </div>
             </div>
         </div>
     </footer>
