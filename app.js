@@ -649,6 +649,11 @@ class ConferenceTrackerManager {
         this.countdownTimer = null;
 
         this.data = {
+            meta: {
+                last_updated: '2026-04-06',
+                maintainer: 'Keshav Kumar',
+                notes: 'Conference and journal tracker data for portfolio site'
+            },
             conferences: [
                 {
                     title: "AAMAS",
@@ -877,14 +882,15 @@ class ConferenceTrackerManager {
             return;
         }
 
+        await this.loadExternalData();
+        this.renderLastUpdated();
+
         if (!this.DateTime) {
             this.cardsContainer.innerHTML = '<p class="deadline-empty">Tracker could not initialize (missing date library).</p>';
             return;
         }
 
-        await this.loadExternalData();
         this.populateAreaFilter();
-        this.renderLastUpdated();
         this.bindEvents();
         this.render();
         this.countdownTimer = setInterval(() => this.updateCountdowns(), 60000);
