@@ -3,7 +3,7 @@
     "last_updated": "2026-04-06",
     "maintainer": "Keshav Kumar",
     "notes": "Conference and journal tracker data for portfolio site",
-    "updated_by": "automated-crawler"
+    "updated_by": "manual-web-verified"
   },
   "conferences": [
     {
@@ -11,313 +11,172 @@
       "full_name": "International Conference on Autonomous Agents and Multiagent Systems",
       "year": 2026,
       "id": "aamas26",
-      "link": "https://cyprusconferences.org/aamas2026/",
-      "deadline": "2025-12-22 23:59",
+      "link": "https://aamas2026.org/",
+      "deadline": "2025-10-08 23:59",
       "abstract_deadline": "2025-10-01 23:59",
-      "timezone": "UTC-12",
+      "timezone": "AoE",
       "date": "May 25-29, 2026",
-      "city": "Cyprus",
+      "city": "Limassol",
       "country": "Cyprus",
-      "tags": [
-        "RL",
-        "MARL",
-        "Agents",
-        "ML"
-      ],
+      "tags": ["RL", "MARL", "Agents", "ML"],
       "rank": "A+",
-      "crawl": {
-        "last_checked": "2026-04-06",
-        "http_status": 200,
-        "status": "ok",
-        "resolved_url": "https://cyprusconferences.org/aamas2026/",
-        "detected_deadline_text": "Thank you for your understanding and patience Important Dates Tutorials, Doctoral Consortium, Workshops: May 25-26, 2026 Main Conference: May 27-29, 2026 Visit the calls for important dates and submission instructions: Calls & Scholarships Overview V",
-        "detected_deadline_value": "2025-12-22 23:59",
-        "deadline_updated": true
-      },
-      "previous_deadline": "2025-10-08 23:59"
-    },
-    {
-      "title": "WWW",
-      "full_name": "International World Wide Web Conference",
-      "year": 2026,
-      "id": "www26",
-      "link": "https://www.thewebconf.org/",
-      "deadline": "2025-10-14 23:59",
-      "timezone": "AoE",
-      "date": "April-May 2026",
-      "city": "TBD",
-      "country": "TBD",
-      "tags": [
-        "Web",
-        "Social",
-        "Networks"
-      ],
-      "rank": "A+",
-      "note": "Estimated dates based on historical patterns",
-      "crawl": {
-        "last_checked": "2026-04-06",
-        "status": "fetch_error",
-        "error": "fetch failed"
-      }
-    },
-    {
-      "title": "AISTATS",
-      "full_name": "International Conference on Artificial Intelligence and Statistics",
-      "year": 2026,
-      "id": "aistats26",
-      "link": "https://aistats.org/",
-      "deadline": "2025-10-10 23:59",
-      "timezone": "AoE",
-      "date": "Spring 2026",
-      "city": "TBD",
-      "country": "TBD",
-      "tags": [
-        "ML",
-        "Statistics",
-        "RL"
-      ],
-      "rank": "A+",
-      "note": "Estimated dates based on historical patterns",
-      "crawl": {
-        "last_checked": "2026-04-06",
-        "http_status": 200,
-        "status": "ok",
-        "resolved_url": "https://aistats.org/",
-        "detected_deadline_text": null,
-        "detected_deadline_value": null,
-        "deadline_updated": false
-      }
-    },
-    {
-      "title": "PAKDD",
-      "full_name": "Pacific-Asia Conference on Knowledge Discovery and Data Mining",
-      "year": 2026,
-      "id": "pakdd26",
-      "link": "https://pakdd.org//",
-      "deadline": "2025-12-14 23:59",
-      "timezone": "PST",
-      "date": "June 2026",
-      "city": "TBD",
-      "country": "TBD",
-      "tags": [
-        "KDD",
-        "DM",
-        "ML"
-      ],
-      "rank": "A",
-      "note": "Estimated dates based on historical patterns",
-      "crawl": {
-        "last_checked": "2026-04-06",
-        "http_status": 200,
-        "status": "ok",
-        "resolved_url": "https://pakdd.org/",
-        "detected_deadline_text": null,
-        "detected_deadline_value": null,
-        "deadline_updated": false
-      }
-    },
-    {
-      "title": "ICML",
-      "full_name": "International Conference on Machine Learning",
-      "year": 2026,
-      "id": "icml26",
-      "link": "https://ICML.cc",
-      "deadline": "2026-04-02 23:59",
-      "abstract_deadline": "2026-01-23 23:59",
-      "timezone": "AoE",
-      "date": "July 2026",
-      "city": "TBD",
-      "country": "TBD",
-      "tags": [
-        "ML",
-        "RL",
-        "DL"
-      ],
-      "rank": "A+",
-      "note": "Estimated dates based on historical patterns",
-      "crawl": {
-        "last_checked": "2026-04-06",
-        "http_status": 200,
-        "status": "ok",
-        "resolved_url": "https://icml.cc/",
-        "detected_deadline_text": "Latest ICML Blog Entries View All Entries Announcing the ICML 2026 Tutorials Apr 02, 2026 Retrospective on PAT x ICML 2026 AI Paper Assistant Program Mar 30, 2026 On Violations of LLM Review Policies Mar 18, 2026 ICML Experimental Program using Googl",
-        "detected_deadline_value": "2026-04-02 23:59",
-        "deadline_updated": true
-      },
-      "previous_deadline": "2026-01-30 23:59"
+      "note": "Official CFP dates."
     },
     {
       "title": "IJCAI",
       "full_name": "International Joint Conference on Artificial Intelligence",
       "year": 2026,
       "id": "ijcai26",
-      "link": "https://ijcai.org/",
-      "deadline": "2026-01-23 23:59",
-      "abstract_deadline": "2026-01-16 23:59",
+      "link": "https://2026.ijcai.org/important-dates/",
+      "deadline": "2026-01-19 23:59",
+      "abstract_deadline": "2026-01-12 23:59",
       "timezone": "AoE",
-      "date": "August 2026",
-      "city": "TBD",
-      "country": "TBD",
-      "tags": [
-        "AI",
-        "RL",
-        "ML"
-      ],
+      "date": "August 15-21, 2026",
+      "city": "Bremen",
+      "country": "Germany",
+      "tags": ["AI", "RL", "ML"],
       "rank": "A+",
-      "note": "Estimated dates based on historical patterns",
-      "crawl": {
-        "last_checked": "2026-04-06",
-        "http_status": 200,
-        "status": "ok",
-        "resolved_url": "https://www.ijcai.org/",
-        "detected_deadline_text": null,
-        "detected_deadline_value": null,
-        "deadline_updated": false
-      }
+      "note": "Official IJCAI-ECAI 2026 main track dates."
     },
     {
       "title": "COLT",
       "full_name": "Annual Conference on Computational Learning Theory",
       "year": 2026,
       "id": "colt26",
-      "link": "https://learningtheory.org/",
-      "deadline": "2026-02-06 17:00",
-      "timezone": "US/Eastern",
-      "date": "June-July 2026",
-      "city": "TBD",
-      "country": "TBD",
-      "tags": [
-        "LT",
-        "RL",
-        "Theory"
-      ],
+      "link": "https://learningtheory.org/colt2026/",
+      "deadline": "2026-02-04 23:59",
+      "timezone": "AoE",
+      "date": "June 29 - July 3, 2026",
+      "city": "San Diego",
+      "country": "USA",
+      "tags": ["LT", "RL", "Theory"],
       "rank": "A+",
-      "note": "Estimated dates based on historical patterns",
-      "crawl": {
-        "last_checked": "2026-04-06",
-        "http_status": 200,
-        "status": "ok",
-        "resolved_url": "https://learningtheory.org/",
-        "detected_deadline_text": null,
-        "detected_deadline_value": null,
-        "deadline_updated": false
-      }
+      "note": "Official COLT 2026 submission deadline."
     },
     {
-      "title": "UAI",
-      "full_name": "Conference on Uncertainty in Artificial Intelligence",
+      "title": "ICML",
+      "full_name": "International Conference on Machine Learning",
       "year": 2026,
-      "id": "uai26",
-      "link": "https://www.auai.org/",
-      "deadline": "2026-02-10 23:59",
+      "id": "icml26",
+      "link": "https://icml.cc/Conferences/2026/Dates",
+      "deadline": "2026-01-28 23:59",
+      "abstract_deadline": "2026-01-23 23:59",
       "timezone": "AoE",
-      "date": "July 2026",
-      "city": "TBD",
-      "country": "TBD",
-      "tags": [
-        "Uncertainty",
-        "Probability",
-        "RL"
-      ],
+      "date": "July 6-11, 2026",
+      "city": "Seoul",
+      "country": "South Korea",
+      "tags": ["ML", "RL", "DL"],
       "rank": "A+",
-      "note": "Estimated dates based on historical patterns",
-      "crawl": {
-        "last_checked": "2026-04-06",
-        "http_status": 200,
-        "status": "ok",
-        "resolved_url": "https://www.auai.org/",
-        "detected_deadline_text": null,
-        "detected_deadline_value": null,
-        "deadline_updated": false
-      }
-    },
-    {
-      "title": "SIGKDD",
-      "full_name": "ACM International Conference on Knowledge Discovery and Data Mining",
-      "year": 2026,
-      "id": "kdd26",
-      "link": "https://kdd.org/",
-      "deadline": "2026-02-10 23:59",
-      "abstract_deadline": "2026-02-03 23:59",
-      "timezone": "AoE",
-      "date": "August 2026",
-      "city": "TBD",
-      "country": "TBD",
-      "tags": [
-        "DM",
-        "ML",
-        "RL"
-      ],
-      "rank": "A+",
-      "note": "Estimated dates based on historical patterns",
-      "crawl": {
-        "last_checked": "2026-04-06",
-        "http_status": 200,
-        "status": "ok",
-        "resolved_url": "https://kdd.org/",
-        "detected_deadline_text": null,
-        "detected_deadline_value": null,
-        "deadline_updated": false
-      }
-    },
-    {
-      "title": "ICAIF",
-      "full_name": "ACM International Conference on AI in Finance",
-      "year": 2026,
-      "id": "icaif26",
-      "link": "https://ai-finance.org/",
-      "deadline": "2026-06-15 23:59",
-      "timezone": "AoE",
-      "date": "November 2026",
-      "city": "TBD",
-      "country": "TBD",
-      "tags": [
-        "Finance",
-        "AI",
-        "RL",
-        "Quant"
-      ],
-      "rank": "None",
-      "note": "Finance-specific AI conference; not CORE ranked but highly relevant",
-      "crawl": {
-        "last_checked": "2026-04-06",
-        "http_status": 200,
-        "status": "ok",
-        "resolved_url": "https://ai-finance.org/",
-        "detected_deadline_text": null,
-        "detected_deadline_value": null,
-        "deadline_updated": false
-      }
+      "note": "Official ICML 2026 dates."
     },
     {
       "title": "NeurIPS",
       "full_name": "Advances in Neural Information Processing Systems",
       "year": 2026,
       "id": "neurips26",
-      "link": "https://neurips.cc",
-      "deadline": "2026-03-30 23:59",
-      "abstract_deadline": "2026-05-11 23:59",
+      "link": "https://neurips.cc/Conferences/2026/Dates",
+      "deadline": "2026-05-06 23:59",
+      "abstract_deadline": "2026-05-04 23:59",
       "timezone": "AoE",
-      "date": "December 2026",
-      "city": "TBD",
-      "country": "TBD",
-      "tags": [
-        "ML",
-        "DL",
-        "RL"
-      ],
+      "date": "December 6-12, 2026",
+      "city": "Sydney",
+      "country": "Australia",
+      "tags": ["ML", "DL", "RL"],
       "rank": "A+",
-      "note": "Estimated dates based on historical patterns",
-      "crawl": {
-        "last_checked": "2026-04-06",
-        "http_status": 200,
-        "status": "ok",
-        "resolved_url": "https://neurips.cc/",
-        "detected_deadline_text": "Latest NeurIPS Blog Entries View All Entries What’s new for the Position Paper Track at NeurIPS 2026 Mar 30, 2026 Introducing the Evaluations & Datasets Track at NeurIPS 2026 Mar 23, 2026 Refining the Review Cycle: NeurIPS 2026 Area Chair Pilot Mar 2",
-        "detected_deadline_value": "2026-03-30 23:59",
-        "deadline_updated": true
-      },
-      "previous_deadline": "2026-05-15 23:59"
+      "note": "Official NeurIPS 2026 dates."
+    },
+    {
+      "title": "ICAIF",
+      "full_name": "ACM International Conference on AI in Finance",
+      "year": 2026,
+      "id": "icaif26",
+      "link": "https://icaif2026.org/call-for-papers.html",
+      "deadline": "2026-08-02 23:59",
+      "timezone": "AoE",
+      "date": "November 14-17, 2026",
+      "city": "Milan",
+      "country": "Italy",
+      "tags": ["Finance", "AI", "RL", "Quant"],
+      "rank": "None",
+      "note": "Official ICAIF 2026 paper deadline."
+    },
+    {
+      "title": "WWW",
+      "full_name": "International World Wide Web Conference",
+      "year": 2026,
+      "id": "www26",
+      "link": "https://www2026.thewebconf.org/calls/main-track-research.html",
+      "deadline": "2025-10-07 23:59",
+      "abstract_deadline": "2025-09-30 23:59",
+      "timezone": "AoE",
+      "date": "April 13-17, 2026",
+      "city": "Dubai",
+      "country": "UAE",
+      "tags": ["Web", "Social", "Networks"],
+      "rank": "A+",
+      "note": "Official The Web Conference 2026 main-track dates."
+    },
+    {
+      "title": "AISTATS",
+      "full_name": "International Conference on Artificial Intelligence and Statistics",
+      "year": 2026,
+      "id": "aistats26",
+      "link": "https://aistats.org/aistats2026/cfp.html",
+      "deadline": "2025-10-02 23:59",
+      "abstract_deadline": "2025-09-25 23:59",
+      "timezone": "AoE",
+      "date": "May 3-5, 2026",
+      "city": "Marrakech",
+      "country": "Morocco",
+      "tags": ["ML", "Statistics", "RL"],
+      "rank": "A+",
+      "note": "Official AISTATS 2026 dates."
+    },
+    {
+      "title": "PAKDD",
+      "full_name": "Pacific-Asia Conference on Knowledge Discovery and Data Mining",
+      "year": 2026,
+      "id": "pakdd26",
+      "link": "https://www.pakdd2026.org/dates",
+      "deadline": "2025-11-25 23:59",
+      "timezone": "PST",
+      "date": "June 9-12, 2026",
+      "city": "Hong Kong",
+      "country": "China",
+      "tags": ["KDD", "DM", "ML"],
+      "rank": "A",
+      "note": "Official PAKDD 2026 dates page; extended paper deadline."
+    },
+    {
+      "title": "UAI",
+      "full_name": "Conference on Uncertainty in Artificial Intelligence",
+      "year": 2026,
+      "id": "uai26",
+      "link": "https://www.auai.org/uai2026/dates.php",
+      "deadline": "2026-02-25 23:59",
+      "timezone": "AoE",
+      "date": "August 18-22, 2026",
+      "city": "Bengaluru",
+      "country": "India",
+      "tags": ["Uncertainty", "Probability", "RL"],
+      "rank": "A+",
+      "note": "Official UAI 2026 main-track deadline."
+    },
+    {
+      "title": "SIGKDD",
+      "full_name": "ACM International Conference on Knowledge Discovery and Data Mining",
+      "year": 2026,
+      "id": "kdd26",
+      "link": "https://kdd2026.kdd.org/call-for-papers/",
+      "deadline": "2026-02-08 23:59",
+      "abstract_deadline": "2026-02-01 23:59",
+      "timezone": "AoE",
+      "date": "August 9-13, 2026",
+      "city": "Jeju",
+      "country": "South Korea",
+      "tags": ["DM", "ML", "RL"],
+      "rank": "A+",
+      "note": "Official KDD 2026 cycle-2 deadline (cycle-1 also available)."
     }
   ],
   "journals": [
@@ -326,11 +185,7 @@
       "id": "jfinance",
       "submission_type": "continuous",
       "link": "https://onlinelibrary.wiley.com/journal/15406261",
-      "tags": [
-        "quantitative-finance",
-        "asset-pricing",
-        "finance"
-      ],
+      "tags": ["quantitative-finance", "asset-pricing", "finance"],
       "notes": "Flagship finance journal for empirical and theoretical quantitative finance work.",
       "rank": "Q1"
     },
@@ -339,11 +194,7 @@
       "id": "jmlr",
       "submission_type": "continuous",
       "link": "https://www.jmlr.org/",
-      "tags": [
-        "machine-learning",
-        "RL",
-        "open-access"
-      ],
+      "tags": ["machine-learning", "RL", "open-access"],
       "notes": "Open-access flagship ML journal, including reinforcement-learning research.",
       "rank": "Q1"
     },
@@ -352,12 +203,7 @@
       "id": "ieeetnnls",
       "submission_type": "continuous",
       "link": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385",
-      "tags": [
-        "neural-networks",
-        "deep-learning",
-        "RL",
-        "multi-agent"
-      ],
+      "tags": ["neural-networks", "deep-learning", "RL", "multi-agent"],
       "notes": "High-impact venue for RL, deep-learning, and multi-agent algorithms.",
       "rank": "Q1"
     },
@@ -366,12 +212,7 @@
       "id": "acmcsur",
       "submission_type": "continuous",
       "link": "https://dl.acm.org/journal/csur",
-      "tags": [
-        "surveys",
-        "RL",
-        "multi-agent",
-        "finance-applications"
-      ],
+      "tags": ["surveys", "RL", "multi-agent", "finance-applications"],
       "notes": "Authoritative survey journal.",
       "rank": "Q1"
     },
@@ -380,12 +221,7 @@
       "id": "eswa",
       "submission_type": "continuous",
       "link": "https://www.journals.elsevier.com/expert-systems-with-applications",
-      "tags": [
-        "AI-applications",
-        "RL",
-        "financial-systems",
-        "trading"
-      ],
+      "tags": ["AI-applications", "RL", "financial-systems", "trading"],
       "notes": "Leading venue for AI applications in trading and financial decision systems.",
       "rank": "Q1"
     }

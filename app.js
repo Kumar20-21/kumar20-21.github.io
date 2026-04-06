@@ -973,6 +973,12 @@ class ConferenceTrackerManager {
         }
     }
 
+    deadlineBucket(item) {
+        const deadline = item._deadlineDT;
+        if (!deadline || !deadline.isValid) return 1; // Continuous/TBA
+        return deadline.toMillis() <= Date.now() ? 2 : 0; // 0=open, 2=closed
+    }
+
     buildICS(item) {
         const dt = this.parseDeadline(item.deadline, item.timezone);
         if (!dt || !dt.isValid) return null;
@@ -1001,11 +1007,13 @@ class ConferenceTrackerManager {
         const rankVal = this.rankFilter?.value || 'all';
         const areaVal = this.areaFilter?.value || 'all';
         const timeVal = this.timeFilter?.value || 'all';
-        const sortVal = this.sortSelect?.value || 'deadline';
+        const sortVal = this.sortSelect?.value || 'priority';
+        const priorityOrder = ['aamas26', 'ijcai26', 'colt26', 'icml26', 'neurips26', 'icaif26'];
+        const priorityRank = new Map(priorityOrder.map((id, idx) => [id, idx]));
 
-        let items = this.getAllItems().map((item) => {
+        let items = this.getAllItems().map((item, sourceIndex) => {
             const parsedDeadline = this.parseDeadline(item.deadline, item.timezone);
-            const prepared = { ...item, _deadlineDT: parsedDeadline };
+            const prepared = { ...item, _deadlineDT: parsedDeadline, _sourceIndex: sourceIndex };
             if (item.deadline) {
                 prepared._ics = this.buildICS(item);
             }
@@ -1039,9 +1047,29 @@ class ConferenceTrackerManager {
         });
 
         items.sort((a, b) => {
+            if (sortVal === 'priority') {
+                const aRank = priorityRank.has(a.id) ? priorityRank.get(a.id) : 1000;
+                const bRank = priorityRank.has(b.id) ? priorityRank.get(b.id) : 1000;
+                if (aRank !== bRank) return aRank - bRank;
+                return a._sourceIndex - b._sourceIndex;
+            }
             if (sortVal === 'name') return a.title.localeCompare(b.title);
             if (sortVal === 'rank') return this.rankWeight(a.rank) - this.rankWeight(b.rank);
-            return this.daysUntil(a._deadlineDT) - this.daysUntil(b._deadlineDT);
+
+            // Sort by deadline with closed venues always listed last.
+            const aBucket = this.deadlineBucket(a);
+            const bBucket = this.deadlineBucket(b);
+            if (aBucket !== bBucket) return aBucket - bBucket;
+
+            if (aBucket === 0) {
+                return a._deadlineDT.toMillis() - b._deadlineDT.toMillis();
+            }
+
+            if (aBucket === 2) {
+                return a._deadlineDT.toMillis() - b._deadlineDT.toMillis();
+            }
+
+            return a._sourceIndex - b._sourceIndex;
         });
 
         return items;
