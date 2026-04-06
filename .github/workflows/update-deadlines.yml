@@ -27,6 +27,11 @@ jobs:
       - name: Run deadline crawler
         run: node scripts/update-deadlines.js
 
+      - name: Verify crawl health
+        env:
+          MIN_CRAWL_SUCCESS: "1"
+        run: node scripts/verify-crawl-health.js data/deadlines.json
+
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
