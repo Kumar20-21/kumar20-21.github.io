@@ -1,0 +1,38 @@
+name: Update Conference Deadlines
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Quarterly schedule (approx every 90 days): Jan/Apr/Jul/Oct 1st at 03:00 UTC
+    - cron: '0 3 1 1,4,7,10 *'
+
+permissions:
+  contents: write
+
+jobs:
+  crawl-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run deadline crawler
+        run: node scripts/update-deadlines.js
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/deadlines.json
+          if git diff --cached --quiet; then
+            echo "No deadline updates to commit"
+            exit 0
+          fi
+          git commit -m "chore: automated deadline data refresh"
+          git push

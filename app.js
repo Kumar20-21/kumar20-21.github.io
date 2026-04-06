@@ -631,6 +631,571 @@ class PerformanceManager {
     }
 }
 
+// Conference Deadline Tracker Manager
+class ConferenceTrackerManager {
+    constructor() {
+        this.root = document.getElementById('conference-tracker-page');
+        this.cardsContainer = document.getElementById('deadline-cards-container');
+        this.statsContainer = document.getElementById('deadline-stats-container');
+        this.searchInput = document.getElementById('deadline-search');
+        this.typeFilter = document.getElementById('deadline-type-filter');
+        this.rankFilter = document.getElementById('deadline-rank-filter');
+        this.areaFilter = document.getElementById('deadline-area-filter');
+        this.timeFilter = document.getElementById('deadline-time-filter');
+        this.sortSelect = document.getElementById('deadline-sort-select');
+        this.toggleViewBtn = document.getElementById('deadline-toggle-view');
+        this.DateTime = window.luxon?.DateTime;
+        this.countdownTimer = null;
+
+        this.data = {
+            conferences: [
+                {
+                    title: "AAMAS",
+                    full_name: "International Conference on Autonomous Agents and Multiagent Systems",
+                    year: 2026,
+                    id: "aamas26",
+                    link: "https://cyprusconferences.org/aamas2026/",
+                    deadline: "2025-10-08 23:59",
+                    abstract_deadline: "2025-10-01 23:59",
+                    timezone: "UTC-12",
+                    date: "May 25-29, 2026",
+                    city: "Cyprus",
+                    country: "Cyprus",
+                    tags: ["RL", "MARL", "Agents", "ML"],
+                    rank: "A+"
+                },
+                {
+                    title: "WWW",
+                    full_name: "International World Wide Web Conference",
+                    year: 2026,
+                    id: "www26",
+                    link: "https://www.thewebconf.org/",
+                    deadline: "2025-10-14 23:59",
+                    timezone: "AoE",
+                    date: "April-May 2026",
+                    city: "TBD",
+                    country: "TBD",
+                    tags: ["Web", "Social", "Networks"],
+                    rank: "A+",
+                    note: "Estimated dates based on historical patterns"
+                },
+                {
+                    title: "AISTATS",
+                    full_name: "International Conference on Artificial Intelligence and Statistics",
+                    year: 2026,
+                    id: "aistats26",
+                    link: "https://aistats.org/",
+                    deadline: "2025-10-10 23:59",
+                    timezone: "AoE",
+                    date: "Spring 2026",
+                    city: "TBD",
+                    country: "TBD",
+                    tags: ["ML", "Statistics", "RL"],
+                    rank: "A+",
+                    note: "Estimated dates based on historical patterns"
+                },
+                {
+                    title: "PAKDD",
+                    full_name: "Pacific-Asia Conference on Knowledge Discovery and Data Mining",
+                    year: 2026,
+                    id: "pakdd26",
+                    link: "https://pakdd.org/",
+                    deadline: "2025-12-14 23:59",
+                    timezone: "PST",
+                    date: "June 2026",
+                    city: "TBD",
+                    country: "TBD",
+                    tags: ["KDD", "DM", "ML"],
+                    rank: "A",
+                    note: "Estimated dates based on historical patterns"
+                },
+                {
+                    title: "ICML",
+                    full_name: "International Conference on Machine Learning",
+                    year: 2026,
+                    id: "icml26",
+                    link: "https://icml.cc/",
+                    deadline: "2026-01-30 23:59",
+                    abstract_deadline: "2026-01-23 23:59",
+                    timezone: "AoE",
+                    date: "July 2026",
+                    city: "TBD",
+                    country: "TBD",
+                    tags: ["ML", "RL", "DL"],
+                    rank: "A+",
+                    note: "Estimated dates based on historical patterns"
+                },
+                {
+                    title: "IJCAI",
+                    full_name: "International Joint Conference on Artificial Intelligence",
+                    year: 2026,
+                    id: "ijcai26",
+                    link: "https://ijcai.org/",
+                    deadline: "2026-01-23 23:59",
+                    abstract_deadline: "2026-01-16 23:59",
+                    timezone: "AoE",
+                    date: "August 2026",
+                    city: "TBD",
+                    country: "TBD",
+                    tags: ["AI", "RL", "ML"],
+                    rank: "A+",
+                    note: "Estimated dates based on historical patterns"
+                },
+                {
+                    title: "COLT",
+                    full_name: "Annual Conference on Computational Learning Theory",
+                    year: 2026,
+                    id: "colt26",
+                    link: "https://learningtheory.org/",
+                    deadline: "2026-02-06 17:00",
+                    timezone: "US/Eastern",
+                    date: "June-July 2026",
+                    city: "TBD",
+                    country: "TBD",
+                    tags: ["LT", "RL", "Theory"],
+                    rank: "A+",
+                    note: "Estimated dates based on historical patterns"
+                },
+                {
+                    title: "UAI",
+                    full_name: "Conference on Uncertainty in Artificial Intelligence",
+                    year: 2026,
+                    id: "uai26",
+                    link: "https://www.auai.org/",
+                    deadline: "2026-02-10 23:59",
+                    timezone: "AoE",
+                    date: "July 2026",
+                    city: "TBD",
+                    country: "TBD",
+                    tags: ["Uncertainty", "Probability", "RL"],
+                    rank: "A+",
+                    note: "Estimated dates based on historical patterns"
+                },
+                {
+                    title: "SIGKDD",
+                    full_name: "ACM International Conference on Knowledge Discovery and Data Mining",
+                    year: 2026,
+                    id: "kdd26",
+                    link: "https://kdd.org/",
+                    deadline: "2026-02-10 23:59",
+                    abstract_deadline: "2026-02-03 23:59",
+                    timezone: "AoE",
+                    date: "August 2026",
+                    city: "TBD",
+                    country: "TBD",
+                    tags: ["DM", "ML", "RL"],
+                    rank: "A+",
+                    note: "Estimated dates based on historical patterns"
+                },
+                {
+                    title: "ICAIF",
+                    full_name: "ACM International Conference on AI in Finance",
+                    year: 2026,
+                    id: "icaif26",
+                    link: "https://ai-finance.org/",
+                    deadline: "2026-06-15 23:59",
+                    timezone: "AoE",
+                    date: "November 2026",
+                    city: "TBD",
+                    country: "TBD",
+                    tags: ["Finance", "AI", "RL", "Quant"],
+                    rank: "None",
+                    note: "Finance-specific AI conference; not CORE ranked but highly relevant"
+                },
+                {
+                    title: "NeurIPS",
+                    full_name: "Advances in Neural Information Processing Systems",
+                    year: 2026,
+                    id: "neurips26",
+                    link: "https://neurips.cc/",
+                    deadline: "2026-05-15 23:59",
+                    abstract_deadline: "2026-05-11 23:59",
+                    timezone: "AoE",
+                    date: "December 2026",
+                    city: "TBD",
+                    country: "TBD",
+                    tags: ["ML", "DL", "RL"],
+                    rank: "A+",
+                    note: "Estimated dates based on historical patterns"
+                }
+            ],
+            journals: [
+                {
+                    title: "Journal of Finance",
+                    id: "jfinance",
+                    submission_type: "continuous",
+                    link: "https://onlinelibrary.wiley.com/journal/15406261",
+                    tags: ["quantitative-finance", "asset-pricing", "finance"],
+                    notes: "Flagship finance journal for empirical and theoretical quantitative finance work.",
+                    rank: "Q1"
+                },
+                {
+                    title: "Journal of Machine Learning Research",
+                    id: "jmlr",
+                    submission_type: "continuous",
+                    link: "https://www.jmlr.org/",
+                    tags: ["machine-learning", "RL", "open-access"],
+                    notes: "Open-access flagship ML journal, including reinforcement-learning research.",
+                    rank: "Q1"
+                },
+                {
+                    title: "IEEE Transactions on Neural Networks and Learning Systems",
+                    id: "ieeetnnls",
+                    submission_type: "continuous",
+                    link: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385",
+                    tags: ["neural-networks", "deep-learning", "RL", "multi-agent"],
+                    notes: "High-impact venue for RL, deep-learning, and multi-agent algorithms.",
+                    rank: "Q1"
+                },
+                {
+                    title: "ACM Computing Surveys",
+                    id: "acmcsur",
+                    submission_type: "continuous",
+                    link: "https://dl.acm.org/journal/csur",
+                    tags: ["surveys", "RL", "multi-agent", "finance-applications"],
+                    notes: "Authoritative survey journal.",
+                    rank: "Q1"
+                },
+                {
+                    title: "Expert Systems with Applications",
+                    id: "eswa",
+                    submission_type: "continuous",
+                    link: "https://www.journals.elsevier.com/expert-systems-with-applications",
+                    tags: ["AI-applications", "RL", "financial-systems", "trading"],
+                    notes: "Leading venue for AI applications in trading and financial decision systems.",
+                    rank: "Q1"
+                }
+            ]
+        };
+
+        this.init();
+    }
+
+    async init() {
+        if (!this.root || !this.cardsContainer || !this.statsContainer) {
+            return;
+        }
+
+        if (!this.DateTime) {
+            this.cardsContainer.innerHTML = '<p class="deadline-empty">Tracker could not initialize (missing date library).</p>';
+            return;
+        }
+
+        await this.loadExternalData();
+        this.populateAreaFilter();
+        this.bindEvents();
+        this.render();
+        this.countdownTimer = setInterval(() => this.updateCountdowns(), 60000);
+    }
+
+    async loadExternalData() {
+        try {
+            const response = await fetch('data/deadlines.json', { cache: 'no-store' });
+            if (!response.ok) return;
+            const loadedData = await response.json();
+            if (!loadedData || !Array.isArray(loadedData.conferences) || !Array.isArray(loadedData.journals)) {
+                return;
+            }
+            this.data = loadedData;
+        } catch (error) {
+            console.warn('Conference tracker data fetch failed, using bundled data.', error);
+        }
+    }
+
+    bindEvents() {
+        const rerender = () => this.render();
+        this.searchInput?.addEventListener('input', rerender);
+        this.typeFilter?.addEventListener('change', rerender);
+        this.rankFilter?.addEventListener('change', rerender);
+        this.areaFilter?.addEventListener('change', rerender);
+        this.timeFilter?.addEventListener('change', rerender);
+        this.sortSelect?.addEventListener('change', rerender);
+
+        this.toggleViewBtn?.addEventListener('click', () => {
+            const isGrid = this.cardsContainer.classList.contains('deadline-grid-view');
+            this.cardsContainer.classList.toggle('deadline-grid-view', !isGrid);
+            this.cardsContainer.classList.toggle('deadline-list-view', isGrid);
+            this.toggleViewBtn.textContent = isGrid ? 'Grid View' : 'List View';
+        });
+    }
+
+    getAllItems() {
+        const conferences = this.data.conferences.map((item) => ({ ...item, type: 'conference' }));
+        const journals = this.data.journals.map((item) => ({ ...item, type: 'journal' }));
+        return [...conferences, ...journals];
+    }
+
+    populateAreaFilter() {
+        if (!this.areaFilter) return;
+        const tags = new Set();
+        this.getAllItems().forEach((item) => {
+            (item.tags || []).forEach((tag) => tags.add(tag));
+        });
+
+        [...tags].sort().forEach((tag) => {
+            const option = document.createElement('option');
+            option.value = tag;
+            option.textContent = tag;
+            this.areaFilter.appendChild(option);
+        });
+    }
+
+    parseDeadline(dateStr, timezone) {
+        if (!dateStr) return null;
+        const tz = timezone === 'AoE' ? 'UTC-12' : (timezone || 'UTC');
+        return this.DateTime.fromFormat(dateStr, 'yyyy-MM-dd HH:mm', { zone: tz });
+    }
+
+    daysUntil(dt) {
+        if (!dt || !dt.isValid) return Infinity;
+        const ms = dt.toMillis() - Date.now();
+        return Math.floor(ms / 86400000);
+    }
+
+    urgencyStatus(dt) {
+        if (!dt || !dt.isValid) return 'success';
+        const days = this.daysUntil(dt);
+        if (days < 0) return 'info';
+        if (days <= 7) return 'error';
+        if (days <= 30) return 'warning';
+        return 'success';
+    }
+
+    rankWeight(rank) {
+        switch (rank) {
+            case 'A+':
+                return 1;
+            case 'A':
+            case 'Q1':
+                return 2;
+            default:
+                return 3;
+        }
+    }
+
+    buildICS(item) {
+        const dt = this.parseDeadline(item.deadline, item.timezone);
+        if (!dt || !dt.isValid) return null;
+
+        const lines = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//Portfolio-Conference-Tracker//EN',
+            'BEGIN:VEVENT',
+            `UID:${item.id}-deadline`,
+            `DTSTAMP:${this.DateTime.utc().toFormat("yyyyMMdd'T'HHmmss'Z'")}`,
+            `DTSTART:${dt.toUTC().toFormat("yyyyMMdd'T'HHmmss'Z'")}`,
+            `SUMMARY:${item.title} Paper Deadline`,
+            `DESCRIPTION:${item.full_name || item.title} submission deadline`,
+            `URL:${item.link}`,
+            'END:VEVENT',
+            'END:VCALENDAR'
+        ];
+
+        return `data:text/calendar;charset=utf8,${encodeURIComponent(lines.join('\r\n'))}`;
+    }
+
+    applyFiltersAndSort() {
+        const searchTerm = this.searchInput?.value.trim().toLowerCase() || '';
+        const typeVal = this.typeFilter?.value || 'all';
+        const rankVal = this.rankFilter?.value || 'all';
+        const areaVal = this.areaFilter?.value || 'all';
+        const timeVal = this.timeFilter?.value || 'all';
+        const sortVal = this.sortSelect?.value || 'deadline';
+
+        let items = this.getAllItems().map((item) => {
+            const parsedDeadline = this.parseDeadline(item.deadline, item.timezone);
+            const prepared = { ...item, _deadlineDT: parsedDeadline };
+            if (item.deadline) {
+                prepared._ics = this.buildICS(item);
+            }
+            return prepared;
+        });
+
+        items = items.filter((item) => {
+            if (searchTerm) {
+                const titleMatch = item.title.toLowerCase().includes(searchTerm);
+                const fullNameMatch = (item.full_name || '').toLowerCase().includes(searchTerm);
+                if (!titleMatch && !fullNameMatch) return false;
+            }
+
+            if (typeVal !== 'all' && item.type !== typeVal) return false;
+
+            if (rankVal !== 'all') {
+                const itemRank = item.rank || 'None';
+                if (itemRank !== rankVal) return false;
+            }
+
+            if (areaVal !== 'all' && !(item.tags || []).includes(areaVal)) return false;
+
+            if (timeVal !== 'all') {
+                if (timeVal === '2026' && item.year !== 2026) return false;
+                const days = this.daysUntil(item._deadlineDT);
+                if (timeVal === '30' && (days < 0 || days > 30)) return false;
+                if (timeVal === '90' && (days < 0 || days > 90)) return false;
+            }
+
+            return true;
+        });
+
+        items.sort((a, b) => {
+            if (sortVal === 'name') return a.title.localeCompare(b.title);
+            if (sortVal === 'rank') return this.rankWeight(a.rank) - this.rankWeight(b.rank);
+            return this.daysUntil(a._deadlineDT) - this.daysUntil(b._deadlineDT);
+        });
+
+        return items;
+    }
+
+    renderStats(items) {
+        const upcoming30 = items.filter((item) => {
+            const days = this.daysUntil(item._deadlineDT);
+            return days >= 0 && days <= 30;
+        }).length;
+        const upcoming90 = items.filter((item) => {
+            const days = this.daysUntil(item._deadlineDT);
+            return days >= 0 && days <= 90;
+        }).length;
+
+        this.statsContainer.innerHTML = '';
+        const stats = [
+            { label: 'Total Venues', value: items.length },
+            { label: 'Next 30 Days', value: upcoming30 },
+            { label: 'Next 90 Days', value: upcoming90 }
+        ];
+
+        stats.forEach((stat) => {
+            const card = document.createElement('div');
+            card.className = 'deadline-stats-card';
+            card.innerHTML = `<h4>${stat.label}</h4><p>${stat.value}</p>`;
+            this.statsContainer.appendChild(card);
+        });
+    }
+
+    createCard(item) {
+        const article = document.createElement('article');
+        article.className = 'card deadline-card';
+
+        const body = document.createElement('div');
+        body.className = 'card__body';
+
+        const titleRow = document.createElement('div');
+        titleRow.className = 'deadline-card-title';
+        const title = document.createElement('h3');
+        title.textContent = item.title;
+        titleRow.appendChild(title);
+        if (item.rank) {
+            const rank = document.createElement('span');
+            rank.className = 'deadline-rank';
+            rank.textContent = item.rank;
+            titleRow.appendChild(rank);
+        }
+
+        const countdown = document.createElement('span');
+        countdown.className = `status countdown status--${this.urgencyStatus(item._deadlineDT)}`;
+        countdown.dataset.id = item.id;
+
+        const info = document.createElement('small');
+        if (item._deadlineDT && item._deadlineDT.isValid) {
+            info.textContent = `Deadline: ${item._deadlineDT.toLocaleString(this.DateTime.DATETIME_MED)}`;
+        } else if (item.submission_type === 'continuous') {
+            info.textContent = 'Continuous submissions';
+        } else {
+            info.textContent = 'TBA';
+        }
+
+        const tagList = document.createElement('div');
+        tagList.className = 'deadline-tag-list';
+        (item.tags || []).forEach((tagText) => {
+            const tag = document.createElement('span');
+            tag.className = 'deadline-tag';
+            tag.textContent = tagText;
+            tagList.appendChild(tag);
+        });
+
+        const details = document.createElement('div');
+        details.className = 'deadline-details';
+        let detailsHTML = `<p><strong>Full Name:</strong> ${item.full_name || item.title}</p>`;
+        if (item.abstract_deadline) {
+            const abstractDeadline = this.parseDeadline(item.abstract_deadline, item.timezone);
+            if (abstractDeadline?.isValid) {
+                detailsHTML += `<p><strong>Abstract Deadline:</strong> ${abstractDeadline.toLocaleString(this.DateTime.DATETIME_MED)}</p>`;
+            }
+        }
+        if (item.date) detailsHTML += `<p><strong>Event Date:</strong> ${item.date}</p>`;
+        if (item.city) detailsHTML += `<p><strong>Location:</strong> ${item.city}${item.country ? `, ${item.country}` : ''}</p>`;
+        if (item.link) detailsHTML += `<p><strong>Website:</strong> <a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.link}</a></p>`;
+        if (item.crawl?.last_checked) detailsHTML += `<p><strong>Last Checked:</strong> ${item.crawl.last_checked}</p>`;
+        if (item.crawl?.status) detailsHTML += `<p><strong>Crawl Status:</strong> ${item.crawl.status}</p>`;
+        if (item.notes || item.note) detailsHTML += `<p><em>${item.notes || item.note}</em></p>`;
+        if (item._ics) detailsHTML += `<p><a href="${item._ics}" download="${item.id}.ics" rel="noopener noreferrer">Add to calendar (.ics)</a></p>`;
+        details.innerHTML = detailsHTML;
+
+        body.appendChild(titleRow);
+        body.appendChild(countdown);
+        body.appendChild(info);
+        body.appendChild(tagList);
+        body.appendChild(details);
+        article.appendChild(body);
+
+        article.addEventListener('click', (event) => {
+            if (event.target.tagName === 'A') return;
+            article.classList.toggle('expanded');
+        });
+
+        return article;
+    }
+
+    render() {
+        const items = this.applyFiltersAndSort();
+        this.renderStats(items);
+        this.cardsContainer.innerHTML = '';
+
+        if (!items.length) {
+            this.cardsContainer.innerHTML = '<p class="deadline-empty">No venues match the current filters.</p>';
+            return;
+        }
+
+        items.forEach((item) => {
+            this.cardsContainer.appendChild(this.createCard(item));
+        });
+
+        this.updateCountdowns();
+    }
+
+    updateCountdowns() {
+        const nowMillis = this.DateTime.local().toMillis();
+        const allItems = this.getAllItems();
+
+        this.cardsContainer.querySelectorAll('.countdown').forEach((element) => {
+            const itemId = element.dataset.id;
+            const item = allItems.find((candidate) => candidate.id === itemId);
+            if (!item) return;
+
+            const deadline = this.parseDeadline(item.deadline, item.timezone);
+            if (!deadline || !deadline.isValid) {
+                element.textContent = 'Continuous';
+                element.className = 'status countdown status--success';
+                return;
+            }
+
+            const remainingMillis = deadline.toMillis() - nowMillis;
+            if (remainingMillis <= 0) {
+                element.textContent = 'Closed';
+                element.className = 'status countdown status--info';
+                return;
+            }
+
+            const totalMinutes = Math.floor(remainingMillis / 60000);
+            const days = Math.floor(totalMinutes / (24 * 60));
+            const hours = Math.floor((totalMinutes % (24 * 60)) / 60);
+            const minutes = totalMinutes % 60;
+            element.textContent = `${days}d ${hours}h ${minutes}m`;
+            element.className = `status countdown status--${this.urgencyStatus(deadline)}`;
+        });
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all managers
@@ -644,6 +1209,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new HeaderManager();
     new AccessibilityManager();
     new PerformanceManager();
+    new ConferenceTrackerManager();
     
     // Add additional interactive features
     initializeAdditionalFeatures();

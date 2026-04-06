@@ -1,0 +1,9 @@
+{
+  "name": "kumar-portfolio-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static portfolio with integrated conference deadline tracker",
+  "scripts": {
+    "update-deadlines": "node scripts/update-deadlines.js"
+  }
+}

@@ -253,55 +253,49 @@
                         <h2 class="section__title">Conference Tracker</h2>
                         <p class="section__subtitle">Track deadlines for top-tier conferences and journals in quantitative finance and machine learning</p>
                     </div>
-                    
-                    <div class="conference-tracker-content">
-                        <div class="tracker-description">
-                            <p>Stay updated with important conference deadlines in quantitative finance, machine learning, and related fields. This tool helps researchers and academics manage submission timelines for prestigious venues.</p>
+
+                    <div class="conference-tracker-content deadline-tracker">
+                        <div class="deadline-toolbar">
+                            <input type="search" id="deadline-search" class="form-control" placeholder="Search venues...">
+
+                            <select id="deadline-type-filter" class="form-control">
+                                <option value="all">All Types</option>
+                                <option value="conference">Conferences</option>
+                                <option value="journal">Journals</option>
+                            </select>
+
+                            <select id="deadline-rank-filter" class="form-control">
+                                <option value="all">All Ranks</option>
+                                <option value="A+">A+</option>
+                                <option value="A">A</option>
+                                <option value="Q1">Q1</option>
+                                <option value="None">None</option>
+                            </select>
+
+                            <select id="deadline-area-filter" class="form-control">
+                                <option value="all">All Research Areas</option>
+                            </select>
+
+                            <select id="deadline-time-filter" class="form-control">
+                                <option value="all">All Time</option>
+                                <option value="30">Next 30 days</option>
+                                <option value="90">Next 90 days</option>
+                                <option value="2026">Year 2026</option>
+                            </select>
+
+                            <select id="deadline-sort-select" class="form-control">
+                                <option value="deadline">Sort by Deadline</option>
+                                <option value="name">Sort by Name</option>
+                                <option value="rank">Sort by Rank</option>
+                            </select>
+
+                            <button id="deadline-toggle-view" class="btn btn--outline btn--sm">List View</button>
                         </div>
-                        
-                        <div class="tracker-action">
-                            <a href="https://kumar20-21.github.io/conference_dealines/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">
-                                <span>Access Conference Tracker</span>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <line x1="7" y1="17" x2="17" y2="7" stroke="currentColor" stroke-width="2"/>
-                                    <polyline points="7,7 17,7 17,17" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </a>
-                        </div>
-                        
-                        <div class="tracker-features">
-                            <div class="feature-grid">
-                                <div class="feature-item">
-                                    <div class="feature-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                            <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
-                                        </svg>
-                                    </div>
-                                    <h4>Real-time Countdown</h4>
-                                    <p>Live countdown timers for upcoming deadlines</p>
-                                </div>
-                                <div class="feature-item">
-                                    <div class="feature-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46 22,3" stroke="currentColor" stroke-width="2"/>
-                                        </svg>
-                                    </div>
-                                    <h4>Smart Filtering</h4>
-                                    <p>Filter by venue type, field, and deadline proximity</p>
-                                </div>
-                                <div class="feature-item">
-                                    <div class="feature-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" stroke-width="2"/>
-                                            <polyline points="17,8 12,3 7,8" stroke="currentColor" stroke-width="2"/>
-                                            <line x1="12" y1="3" x2="12" y2="15" stroke="currentColor" stroke-width="2"/>
-                                        </svg>
-                                    </div>
-                                    <h4>Regular Updates</h4>
-                                    <p>Automatically updated conference information</p>
-                                </div>
-                            </div>
+
+                        <div id="deadline-stats-container" class="deadline-stats"></div>
+                        <div id="deadline-cards-container" class="deadline-cards deadline-grid-view"></div>
+                        <div class="deadline-footer-note">
+                            <p>Data last updated: July 27, 2025</p>
                         </div>
                     </div>
                 </div>
@@ -323,6 +317,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.0/build/global/luxon.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
