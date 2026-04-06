@@ -157,17 +157,15 @@ class PageNavigationManager {
         
         // Hide current page
         this.hidePage(this.currentPage);
+
+        // Show new page immediately and update URL immediately.
+        this.showPage(pageId);
+        this.currentPage = pageId;
+        this.updateActiveNavLink(pageId);
+        this.updateUrlForPage(pageId, replace);
         
-        // Show new page with delay for smooth transition
-        setTimeout(() => {
-            this.showPage(pageId);
-            this.currentPage = pageId;
-            this.updateActiveNavLink(pageId);
-            this.updateUrlForPage(pageId, replace);
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 150);
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         
         // Close mobile menu if open
         this.closeMobileMenu();
