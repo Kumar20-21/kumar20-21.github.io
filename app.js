@@ -1317,6 +1317,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add additional interactive features
     initializeAdditionalFeatures();
+    initializeFooterYear();
 });
 
 function initializeAdditionalFeatures() {
@@ -1354,6 +1355,13 @@ function initializeAdditionalFeatures() {
     
     // Initial mobile check
     debouncedResize();
+}
+
+function initializeFooterYear() {
+    const yearEl = document.getElementById('copyright-year');
+    if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+    }
 }
 
 // Global utility functions
