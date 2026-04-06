@@ -1,0 +1,40 @@
+name: Update Copyright Year
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run at 00:05 UTC on January 1 each year
+    - cron: '5 0 1 1 *'
+
+permissions:
+  contents: write
+
+jobs:
+  update-year:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Update copyright year
+        run: node scripts/update-copyright-year.js
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No copyright update to commit"
+            exit 0
+          fi
+          git commit -m "chore: update copyright year"
+          git push
