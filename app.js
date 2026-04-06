@@ -56,6 +56,17 @@ class PageNavigationManager {
         this.pages = document.querySelectorAll('.page');
         this.navLinks = document.querySelectorAll('.nav__link');
         this.heroButtons = document.querySelectorAll('[data-page]');
+        this.pageToPath = {
+            home: '/',
+            about: '/aboutme',
+            projects: '/projects',
+            publications: '/publications',
+            blog: '/blog',
+            'conference-tracker': '/conference-tracker'
+        };
+        this.pathToPage = Object.fromEntries(
+            Object.entries(this.pageToPath).map(([page, path]) => [path, page])
+        );
         
         this.init();
     }
@@ -87,13 +98,61 @@ class PageNavigationManager {
             e.preventDefault();
             this.navigateToPage('home');
         });
-        
-        // Set initial page state
-        this.showPage(this.currentPage);
-        this.updateActiveNavLink(this.currentPage);
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', () => {
+            const targetPage = this.getPageFromLocation();
+            if (targetPage !== this.currentPage) {
+                this.hidePage(this.currentPage);
+                this.showPage(targetPage);
+                this.currentPage = targetPage;
+                this.updateActiveNavLink(targetPage);
+                window.scrollTo({ top: 0, behavior: 'auto' });
+            }
+        });
+
+        // Set initial page state from URL
+        const initialPage = this.getPageFromLocation();
+        this.currentPage = initialPage;
+        this.showPage(initialPage);
+        this.updateActiveNavLink(initialPage);
+        this.updateUrlForPage(initialPage, true);
     }
     
-    navigateToPage(pageId) {
+    getNormalizedPath(rawPath) {
+        if (!rawPath) return '/';
+        if (rawPath === '/index.html') return '/';
+        const cleaned = rawPath.endsWith('/') && rawPath !== '/' ? rawPath.slice(0, -1) : rawPath;
+        return cleaned || '/';
+    }
+
+    getPageFromLocation() {
+        const searchParams = new URLSearchParams(window.location.search);
+        const redirectedPath = searchParams.get('redirect');
+        if (redirectedPath) {
+            const decodedPath = decodeURIComponent(redirectedPath);
+            const normalizedRedirectPath = this.getNormalizedPath(decodedPath.split('?')[0]);
+            const redirectedPage = this.pathToPage[normalizedRedirectPath] || 'home';
+            this.updateUrlForPage(redirectedPage, true);
+            return redirectedPage;
+        }
+
+        const normalizedPath = this.getNormalizedPath(window.location.pathname);
+        return this.pathToPage[normalizedPath] || 'home';
+    }
+
+    updateUrlForPage(pageId, replace = false) {
+        const path = this.pageToPath[pageId] || '/';
+        const targetUrl = `${path}${window.location.hash || ''}`;
+        if (replace) {
+            window.history.replaceState({ pageId }, '', targetUrl);
+        } else {
+            window.history.pushState({ pageId }, '', targetUrl);
+        }
+    }
+
+    navigateToPage(pageId, replace = false) {
+        if (!this.pageToPath[pageId]) return;
         if (pageId === this.currentPage) return;
         
         // Hide current page
@@ -104,6 +163,7 @@ class PageNavigationManager {
             this.showPage(pageId);
             this.currentPage = pageId;
             this.updateActiveNavLink(pageId);
+            this.updateUrlForPage(pageId, replace);
             
             // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
