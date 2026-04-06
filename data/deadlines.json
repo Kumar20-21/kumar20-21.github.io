@@ -2,7 +2,8 @@
   "meta": {
     "last_updated": "2026-04-06",
     "maintainer": "Keshav Kumar",
-    "notes": "Conference and journal tracker data for portfolio site"
+    "notes": "Conference and journal tracker data for portfolio site",
+    "updated_by": "automated-crawler"
   },
   "conferences": [
     {
@@ -11,7 +12,7 @@
       "year": 2026,
       "id": "aamas26",
       "link": "https://cyprusconferences.org/aamas2026/",
-      "deadline": "2025-10-08 23:59",
+      "deadline": "2025-12-22 23:59",
       "abstract_deadline": "2025-10-01 23:59",
       "timezone": "UTC-12",
       "date": "May 25-29, 2026",
@@ -23,7 +24,17 @@
         "Agents",
         "ML"
       ],
-      "rank": "A+"
+      "rank": "A+",
+      "crawl": {
+        "last_checked": "2026-04-06",
+        "http_status": 200,
+        "status": "ok",
+        "resolved_url": "https://cyprusconferences.org/aamas2026/",
+        "detected_deadline_text": "Thank you for your understanding and patience Important Dates Tutorials, Doctoral Consortium, Workshops: May 25-26, 2026 Main Conference: May 27-29, 2026 Visit the calls for important dates and submission instructions: Calls & Scholarships Overview V",
+        "detected_deadline_value": "2025-12-22 23:59",
+        "deadline_updated": true
+      },
+      "previous_deadline": "2025-10-08 23:59"
     },
     {
       "title": "WWW",
@@ -42,7 +53,12 @@
         "Networks"
       ],
       "rank": "A+",
-      "note": "Estimated dates based on historical patterns"
+      "note": "Estimated dates based on historical patterns",
+      "crawl": {
+        "last_checked": "2026-04-06",
+        "status": "fetch_error",
+        "error": "fetch failed"
+      }
     },
     {
       "title": "AISTATS",
@@ -55,16 +71,29 @@
       "date": "Spring 2026",
       "city": "TBD",
       "country": "TBD",
-      "tags": ["ML", "Statistics", "RL"],
+      "tags": [
+        "ML",
+        "Statistics",
+        "RL"
+      ],
       "rank": "A+",
-      "note": "Estimated dates based on historical patterns"
+      "note": "Estimated dates based on historical patterns",
+      "crawl": {
+        "last_checked": "2026-04-06",
+        "http_status": 200,
+        "status": "ok",
+        "resolved_url": "https://aistats.org/",
+        "detected_deadline_text": null,
+        "detected_deadline_value": null,
+        "deadline_updated": false
+      }
     },
     {
       "title": "PAKDD",
       "full_name": "Pacific-Asia Conference on Knowledge Discovery and Data Mining",
       "year": 2026,
       "id": "pakdd26",
-      "link": "https://pakdd.org/",
+      "link": "https://pakdd.org//",
       "deadline": "2025-12-14 23:59",
       "timezone": "PST",
       "date": "June 2026",
@@ -76,15 +105,24 @@
         "ML"
       ],
       "rank": "A",
-      "note": "Estimated dates based on historical patterns"
+      "note": "Estimated dates based on historical patterns",
+      "crawl": {
+        "last_checked": "2026-04-06",
+        "http_status": 200,
+        "status": "ok",
+        "resolved_url": "https://pakdd.org/",
+        "detected_deadline_text": null,
+        "detected_deadline_value": null,
+        "deadline_updated": false
+      }
     },
     {
       "title": "ICML",
       "full_name": "International Conference on Machine Learning",
       "year": 2026,
       "id": "icml26",
-      "link": "https://icml.cc/",
-      "deadline": "2026-01-30 23:59",
+      "link": "https://ICML.cc",
+      "deadline": "2026-04-02 23:59",
       "abstract_deadline": "2026-01-23 23:59",
       "timezone": "AoE",
       "date": "July 2026",
@@ -96,7 +134,17 @@
         "DL"
       ],
       "rank": "A+",
-      "note": "Estimated dates based on historical patterns"
+      "note": "Estimated dates based on historical patterns",
+      "crawl": {
+        "last_checked": "2026-04-06",
+        "http_status": 200,
+        "status": "ok",
+        "resolved_url": "https://icml.cc/",
+        "detected_deadline_text": "Latest ICML Blog Entries View All Entries Announcing the ICML 2026 Tutorials Apr 02, 2026 Retrospective on PAT x ICML 2026 AI Paper Assistant Program Mar 30, 2026 On Violations of LLM Review Policies Mar 18, 2026 ICML Experimental Program using Googl",
+        "detected_deadline_value": "2026-04-02 23:59",
+        "deadline_updated": true
+      },
+      "previous_deadline": "2026-01-30 23:59"
     },
     {
       "title": "IJCAI",
@@ -116,7 +164,16 @@
         "ML"
       ],
       "rank": "A+",
-      "note": "Estimated dates based on historical patterns"
+      "note": "Estimated dates based on historical patterns",
+      "crawl": {
+        "last_checked": "2026-04-06",
+        "http_status": 200,
+        "status": "ok",
+        "resolved_url": "https://www.ijcai.org/",
+        "detected_deadline_text": null,
+        "detected_deadline_value": null,
+        "deadline_updated": false
+      }
     },
     {
       "title": "COLT",
@@ -135,7 +192,16 @@
         "Theory"
       ],
       "rank": "A+",
-      "note": "Estimated dates based on historical patterns"
+      "note": "Estimated dates based on historical patterns",
+      "crawl": {
+        "last_checked": "2026-04-06",
+        "http_status": 200,
+        "status": "ok",
+        "resolved_url": "https://learningtheory.org/",
+        "detected_deadline_text": null,
+        "detected_deadline_value": null,
+        "deadline_updated": false
+      }
     },
     {
       "title": "UAI",
@@ -154,7 +220,16 @@
         "RL"
       ],
       "rank": "A+",
-      "note": "Estimated dates based on historical patterns"
+      "note": "Estimated dates based on historical patterns",
+      "crawl": {
+        "last_checked": "2026-04-06",
+        "http_status": 200,
+        "status": "ok",
+        "resolved_url": "https://www.auai.org/",
+        "detected_deadline_text": null,
+        "detected_deadline_value": null,
+        "deadline_updated": false
+      }
     },
     {
       "title": "SIGKDD",
@@ -174,7 +249,16 @@
         "RL"
       ],
       "rank": "A+",
-      "note": "Estimated dates based on historical patterns"
+      "note": "Estimated dates based on historical patterns",
+      "crawl": {
+        "last_checked": "2026-04-06",
+        "http_status": 200,
+        "status": "ok",
+        "resolved_url": "https://kdd.org/",
+        "detected_deadline_text": null,
+        "detected_deadline_value": null,
+        "deadline_updated": false
+      }
     },
     {
       "title": "ICAIF",
@@ -194,15 +278,24 @@
         "Quant"
       ],
       "rank": "None",
-      "note": "Finance-specific AI conference; not CORE ranked but highly relevant"
+      "note": "Finance-specific AI conference; not CORE ranked but highly relevant",
+      "crawl": {
+        "last_checked": "2026-04-06",
+        "http_status": 200,
+        "status": "ok",
+        "resolved_url": "https://ai-finance.org/",
+        "detected_deadline_text": null,
+        "detected_deadline_value": null,
+        "deadline_updated": false
+      }
     },
     {
       "title": "NeurIPS",
       "full_name": "Advances in Neural Information Processing Systems",
       "year": 2026,
       "id": "neurips26",
-      "link": "https://neurips.cc/",
-      "deadline": "2026-05-15 23:59",
+      "link": "https://neurips.cc",
+      "deadline": "2026-03-30 23:59",
       "abstract_deadline": "2026-05-11 23:59",
       "timezone": "AoE",
       "date": "December 2026",
@@ -214,7 +307,17 @@
         "RL"
       ],
       "rank": "A+",
-      "note": "Estimated dates based on historical patterns"
+      "note": "Estimated dates based on historical patterns",
+      "crawl": {
+        "last_checked": "2026-04-06",
+        "http_status": 200,
+        "status": "ok",
+        "resolved_url": "https://neurips.cc/",
+        "detected_deadline_text": "Latest NeurIPS Blog Entries View All Entries What’s new for the Position Paper Track at NeurIPS 2026 Mar 30, 2026 Introducing the Evaluations & Datasets Track at NeurIPS 2026 Mar 23, 2026 Refining the Review Cycle: NeurIPS 2026 Area Chair Pilot Mar 2",
+        "detected_deadline_value": "2026-03-30 23:59",
+        "deadline_updated": true
+      },
+      "previous_deadline": "2026-05-15 23:59"
     }
   ],
   "journals": [
