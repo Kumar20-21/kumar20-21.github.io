@@ -644,6 +644,7 @@ class ConferenceTrackerManager {
         this.timeFilter = document.getElementById('deadline-time-filter');
         this.sortSelect = document.getElementById('deadline-sort-select');
         this.toggleViewBtn = document.getElementById('deadline-toggle-view');
+        this.lastUpdatedEl = document.getElementById('deadline-last-updated');
         this.DateTime = window.luxon?.DateTime;
         this.countdownTimer = null;
 
@@ -883,6 +884,7 @@ class ConferenceTrackerManager {
 
         await this.loadExternalData();
         this.populateAreaFilter();
+        this.renderLastUpdated();
         this.bindEvents();
         this.render();
         this.countdownTimer = setInterval(() => this.updateCountdowns(), 60000);
@@ -938,6 +940,16 @@ class ConferenceTrackerManager {
             option.textContent = tag;
             this.areaFilter.appendChild(option);
         });
+    }
+
+    renderLastUpdated() {
+        if (!this.lastUpdatedEl) return;
+        const updated = this.data?.meta?.last_updated;
+        if (updated) {
+            this.lastUpdatedEl.textContent = `Data last updated: ${updated}`;
+            return;
+        }
+        this.lastUpdatedEl.textContent = 'Data last updated: Unknown';
     }
 
     parseDeadline(dateStr, timezone) {
