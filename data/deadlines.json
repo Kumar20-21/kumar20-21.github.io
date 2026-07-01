@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-04-06",
+    "last_updated": "2026-07-01",
     "maintainer": "Keshav Kumar",
     "notes": "Conference and journal tracker data for portfolio site",
     "updated_by": "automated-crawler"
@@ -27,7 +27,7 @@
       "rank": "A+",
       "note": "Official CFP dates.",
       "crawl": {
-        "last_checked": "2026-04-06",
+        "last_checked": "2026-07-01",
         "status": "fetch_error",
         "error": "fetch failed"
       }
@@ -52,7 +52,7 @@
       "rank": "A+",
       "note": "Official IJCAI-ECAI 2026 main track dates.",
       "crawl": {
-        "last_checked": "2026-04-06",
+        "last_checked": "2026-07-01",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://2026.ijcai.org/important-dates/",
@@ -80,7 +80,7 @@
       "rank": "A+",
       "note": "Official COLT 2026 submission deadline.",
       "crawl": {
-        "last_checked": "2026-04-06",
+        "last_checked": "2026-07-01",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://learningtheory.org/colt2026/",
@@ -109,7 +109,7 @@
       "rank": "A+",
       "note": "Official ICML 2026 dates.",
       "crawl": {
-        "last_checked": "2026-04-06",
+        "last_checked": "2026-07-01",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://icml.cc/Conferences/2026/Dates",
@@ -138,7 +138,7 @@
       "rank": "A+",
       "note": "Official NeurIPS 2026 dates.",
       "crawl": {
-        "last_checked": "2026-04-06",
+        "last_checked": "2026-07-01",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://neurips.cc/Conferences/2026/Dates",
@@ -167,7 +167,7 @@
       "rank": "None",
       "note": "Official ICAIF 2026 paper deadline.",
       "crawl": {
-        "last_checked": "2026-04-06",
+        "last_checked": "2026-07-01",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://icaif2026.org/call-for-papers.html",
@@ -196,7 +196,7 @@
       "rank": "A+",
       "note": "Official The Web Conference 2026 main-track dates.",
       "crawl": {
-        "last_checked": "2026-04-06",
+        "last_checked": "2026-07-01",
         "http_status": 404,
         "status": "http_error",
         "resolved_url": "https://www2026.thewebconf.org/calls/main-track-research.html"
@@ -222,7 +222,7 @@
       "rank": "A+",
       "note": "Official AISTATS 2026 dates.",
       "crawl": {
-        "last_checked": "2026-04-06",
+        "last_checked": "2026-07-01",
         "http_status": 404,
         "status": "http_error",
         "resolved_url": "https://aistats.org/aistats2026/cfp.html"
@@ -247,7 +247,7 @@
       "rank": "A",
       "note": "Official PAKDD 2026 dates page; extended paper deadline.",
       "crawl": {
-        "last_checked": "2026-04-06",
+        "last_checked": "2026-07-01",
         "http_status": 404,
         "status": "http_error",
         "resolved_url": "https://www.pakdd2026.org/dates"
@@ -272,7 +272,7 @@
       "rank": "A+",
       "note": "Official UAI 2026 main-track deadline.",
       "crawl": {
-        "last_checked": "2026-04-06",
+        "last_checked": "2026-07-01",
         "http_status": 404,
         "status": "http_error",
         "resolved_url": "https://www.auai.org/uai2026/dates.php"
@@ -298,7 +298,7 @@
       "rank": "A+",
       "note": "Official KDD 2026 cycle-2 deadline (cycle-1 also available).",
       "crawl": {
-        "last_checked": "2026-04-06",
+        "last_checked": "2026-07-01",
         "http_status": 404,
         "status": "http_error",
         "resolved_url": "https://kdd2026.kdd.org/call-for-papers/"
