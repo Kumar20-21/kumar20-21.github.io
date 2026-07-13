@@ -1169,6 +1169,61 @@ body {
   border: 1px solid var(--color-border);
 }
 
+/* Projects Section */
+.projects-section {
+  padding: 5rem 0;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-32);
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+.project-card__tag {
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.project-card__tag--funding {
+  background: var(--color-bg-2);
+  color: var(--color-text);
+}
+
+.project-card__tag--status {
+  background: var(--color-primary);
+  color: var(--color-btn-primary-text);
+}
+
+.project-card__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin: 0 0 var(--space-12);
+}
+
+.project-card__desc {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0 0 var(--space-16);
+}
+
+.project-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
 /* Construction Section */
 .construction-section {
   padding: 5rem 0;
