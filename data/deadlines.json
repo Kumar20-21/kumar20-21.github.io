@@ -13,9 +13,9 @@
       "year": 2027,
       "id": "aaai27",
       "link": "https://aaai.org/conference/aaai/aaai-27/",
-      "deadline": "2026-07-28 23:59",
+      "deadline": "2026-03-04 23:59",
       "abstract_deadline": "2026-07-21 23:59",
-      "timezone": "AoE",
+      "timezone": "UTC-12",
       "date": "February 16-23, 2027",
       "city": "Montréal",
       "country": "Canada",
@@ -31,16 +31,19 @@
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://aaai.org/conference/aaai/aaai-27/",
-        "detected_deadline_text": null,
-        "detected_deadline_value": null,
-        "deadline_updated": false
+        "detected_deadline_text": "AAAI-27 - AAAI Skip to main content AAAI Association for the Advancement of Artificial Intelligence Menu AAAI Association for the Advancement of Artificial Intelligence Menu About AAAI News Officers and Committees Staff Bylaws Awards Fellows Program ",
+        "detected_deadline_value": "2026-03-04 23:59",
+        "deadline_updated": true
       },
       "rank_crawl": {
         "last_checked": "2026-07-13",
-        "status": "fetch_error",
-        "error": "fetch failed",
-        "updated": false
-      }
+        "status": "ok",
+        "updated": false,
+        "http_status": 200,
+        "core_source": "ICORE2026",
+        "core_rank": "A*"
+      },
+      "previous_deadline": "2026-07-28 23:59"
     },
     {
       "title": "AAMAS",
@@ -99,12 +102,11 @@
       "crawl": {
         "last_checked": "2026-07-13",
         "http_status": 200,
-        "status": "fetch_error",
+        "status": "ok",
         "resolved_url": "https://2026.ijcai.org/important-dates/",
         "detected_deadline_text": null,
         "detected_deadline_value": null,
-        "deadline_updated": false,
-        "error": "fetch failed"
+        "deadline_updated": false
       },
       "rank_crawl": {
         "last_checked": "2026-07-13",
@@ -181,12 +183,11 @@
       },
       "rank_crawl": {
         "last_checked": "2026-07-13",
-        "status": "fetch_error",
+        "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
         "core_rank": "A*",
-        "updated": false,
-        "error": "fetch failed"
+        "updated": false
       }
     },
     {
@@ -318,8 +319,7 @@
         "last_checked": "2026-07-13",
         "http_status": 404,
         "status": "http_error",
-        "resolved_url": "https://aistats.org/aistats2026/cfp.html",
-        "error": "fetch failed"
+        "resolved_url": "https://aistats.org/aistats2026/cfp.html"
       },
       "rank_crawl": {
         "last_checked": "2026-07-13",
@@ -387,8 +387,7 @@
         "last_checked": "2026-07-13",
         "http_status": 404,
         "status": "http_error",
-        "resolved_url": "https://www.auai.org/uai2026/dates.php",
-        "error": "fetch failed"
+        "resolved_url": "https://www.auai.org/uai2026/dates.php"
       },
       "rank_crawl": {
         "last_checked": "2026-07-13",
