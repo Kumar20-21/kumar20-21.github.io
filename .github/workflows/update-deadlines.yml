@@ -1,4 +1,4 @@
-name: Update Conference Deadlines
+name: Update Conference Deadlines & Ranks
 
 on:
   workflow_dispatch:
@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Run deadline crawler
+      - name: Run deadline & rank crawler
         run: node scripts/update-deadlines.js
 
       - name: Verify crawl health
@@ -41,5 +41,5 @@ jobs:
             echo "No deadline updates to commit"
             exit 0
           fi
-          git commit -m "chore: automated deadline data refresh"
+          git commit -m "chore: automated deadline and rank data refresh"
           git push
