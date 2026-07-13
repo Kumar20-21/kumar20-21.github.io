@@ -13,9 +13,9 @@
       "year": 2027,
       "id": "aaai27",
       "link": "https://aaai.org/conference/aaai/aaai-27/",
-      "deadline": "2026-03-04 23:59",
+      "deadline": "2026-07-28 23:59",
       "abstract_deadline": "2026-07-21 23:59",
-      "timezone": "UTC-12",
+      "timezone": "AoE",
       "date": "February 16-23, 2027",
       "city": "Montréal",
       "country": "Canada",
@@ -26,14 +26,16 @@
       ],
       "rank": "A+",
       "note": "Official AAAI-27 paper deadline; track-specific deadlines may differ.",
+      "skip_deadline_autodetect": true,
       "crawl": {
         "last_checked": "2026-07-13",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://aaai.org/conference/aaai/aaai-27/",
-        "detected_deadline_text": "AAAI-27 - AAAI Skip to main content AAAI Association for the Advancement of Artificial Intelligence Menu AAAI Association for the Advancement of Artificial Intelligence Menu About AAAI News Officers and Committees Staff Bylaws Awards Fellows Program ",
-        "detected_deadline_value": "2026-03-04 23:59",
-        "deadline_updated": true
+        "detected_deadline_text": null,
+        "detected_deadline_value": null,
+        "deadline_updated": false,
+        "note": "Deadline auto-detection skipped (skip_deadline_autodetect); page renders dates via JS."
       },
       "rank_crawl": {
         "last_checked": "2026-07-13",
@@ -42,8 +44,7 @@
         "http_status": 200,
         "core_source": "ICORE2026",
         "core_rank": "A*"
-      },
-      "previous_deadline": "2026-07-28 23:59"
+      }
     },
     {
       "title": "AAMAS",
