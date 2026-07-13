@@ -200,7 +200,12 @@ async function main() {
       conference.crawl.resolved_url = page.finalUrl;
       delete conference.crawl.error;
 
-      if (page.ok) {
+      if (page.ok && conference.skip_deadline_autodetect) {
+        conference.crawl.detected_deadline_text = null;
+        conference.crawl.detected_deadline_value = null;
+        conference.crawl.deadline_updated = false;
+        conference.crawl.note = 'Deadline auto-detection skipped (skip_deadline_autodetect); page renders dates via JS.';
+      } else if (page.ok) {
         const canonical = extractCanonicalUrl(page.html);
         if (canonical && canonical.startsWith('http')) {
           conference.link = canonical;
