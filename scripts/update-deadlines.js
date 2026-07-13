@@ -6,6 +6,7 @@ const path = require('path');
 const DATA_PATH = path.join(process.cwd(), 'data', 'deadlines.json');
 const REQUEST_TIMEOUT_MS = 15000;
 const KEYWORDS = ['deadline', 'submission', 'paper', 'abstract', 'important dates', 'call for papers'];
+const CORE_RANK_URL = 'https://portal.core.edu.au/conf-ranks/';
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -98,6 +99,59 @@ function extractCanonicalUrl(html) {
   return canonical ? canonical[1] : null;
 }
 
+function parseCoreRankRows(html) {
+  const rows = [];
+  const rowRe = /<tr class="(?:even|odd)row"[^>]*>([\s\S]*?)<\/tr>/g;
+  let rowMatch;
+  while ((rowMatch = rowRe.exec(html))) {
+    const cellRe = /<td[^>]*>([\s\S]*?)<\/td>/g;
+    const cells = [];
+    let cellMatch;
+    while ((cellMatch = cellRe.exec(rowMatch[1]))) {
+      cells.push(stripHtml(cellMatch[1]));
+    }
+    if (cells.length >= 4) {
+      rows.push({ title: cells[0], acronym: cells[1], source: cells[2], rank: cells[3] });
+    }
+  }
+  return rows;
+}
+
+// The site uses "A+" for CORE's top tier ("A*"); every other CORE rank
+// (A, B, C, National, etc.) is passed through unchanged.
+function mapCoreRank(coreRank) {
+  return coreRank === 'A*' ? 'A+' : coreRank;
+}
+
+async function fetchConferenceRank(acronym) {
+  const url = `${CORE_RANK_URL}?search=${encodeURIComponent(acronym)}&by=acronym&source=all&sort=arank&page=1`;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
+  try {
+    const response = await fetch(url, {
+      headers: { 'User-Agent': 'RankCrawler/1.0 (+https://github.com/Kumar20-21)' },
+      redirect: 'follow',
+      signal: controller.signal
+    });
+
+    if (!response.ok) {
+      return { status: 'http_error', httpStatus: response.status };
+    }
+
+    const rows = parseCoreRankRows(await response.text());
+    const match = rows.find((row) => row.acronym.toLowerCase() === acronym.toLowerCase());
+
+    if (!match) {
+      return { status: 'not_found', httpStatus: response.status };
+    }
+
+    return { status: 'ok', httpStatus: response.status, source: match.source, coreRank: match.rank };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 async function fetchPage(url) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
@@ -144,36 +198,34 @@ async function main() {
       conference.crawl.http_status = page.status;
       conference.crawl.status = page.ok ? 'ok' : 'http_error';
       conference.crawl.resolved_url = page.finalUrl;
+      delete conference.crawl.error;
 
-      if (!page.ok) {
-        await sleep(900);
-        continue;
-      }
+      if (page.ok) {
+        const canonical = extractCanonicalUrl(page.html);
+        if (canonical && canonical.startsWith('http')) {
+          conference.link = canonical;
+        }
 
-      const canonical = extractCanonicalUrl(page.html);
-      if (canonical && canonical.startsWith('http')) {
-        conference.link = canonical;
-      }
+        const pageText = stripHtml(page.html);
+        const picked = pickBestDeadlineCandidate(pageText);
+        if (picked) {
+          conference.crawl.detected_deadline_text = picked.chunk.slice(0, 250);
+          conference.crawl.detected_deadline_value = picked.parsedDate;
 
-      const pageText = stripHtml(page.html);
-      const picked = pickBestDeadlineCandidate(pageText);
-      if (picked) {
-        conference.crawl.detected_deadline_text = picked.chunk.slice(0, 250);
-        conference.crawl.detected_deadline_value = picked.parsedDate;
-
-        // Only update tracked deadline when the new value differs.
-        if (conference.deadline !== picked.parsedDate) {
-          conference.previous_deadline = conference.deadline || null;
-          conference.deadline = picked.parsedDate;
-          conference.timezone = detectTimezone(picked.chunk, conference.timezone);
-          conference.crawl.deadline_updated = true;
+          // Only update tracked deadline when the new value differs.
+          if (conference.deadline !== picked.parsedDate) {
+            conference.previous_deadline = conference.deadline || null;
+            conference.deadline = picked.parsedDate;
+            conference.timezone = detectTimezone(picked.chunk, conference.timezone);
+            conference.crawl.deadline_updated = true;
+          } else {
+            conference.crawl.deadline_updated = false;
+          }
         } else {
+          conference.crawl.detected_deadline_text = null;
+          conference.crawl.detected_deadline_value = null;
           conference.crawl.deadline_updated = false;
         }
-      } else {
-        conference.crawl.detected_deadline_text = null;
-        conference.crawl.detected_deadline_value = null;
-        conference.crawl.deadline_updated = false;
       }
     } catch (error) {
       conference.crawl.status = 'fetch_error';
@@ -182,10 +234,45 @@ async function main() {
 
     // Polite crawl spacing
     await sleep(1000);
+
+    const rankAcronym = conference.core_acronym || conference.title;
+    conference.rank_crawl = conference.rank_crawl || {};
+    conference.rank_crawl.last_checked = today;
+
+    try {
+      const rankResult = await fetchConferenceRank(rankAcronym);
+      conference.rank_crawl.status = rankResult.status;
+      conference.rank_crawl.http_status = rankResult.httpStatus;
+      delete conference.rank_crawl.error;
+
+      if (rankResult.status === 'ok') {
+        const mappedRank = mapCoreRank(rankResult.coreRank);
+        conference.rank_crawl.core_source = rankResult.source;
+        conference.rank_crawl.core_rank = rankResult.coreRank;
+
+        if (conference.rank !== mappedRank) {
+          conference.previous_rank = conference.rank || null;
+          conference.rank = mappedRank;
+          conference.rank_crawl.updated = true;
+        } else {
+          conference.rank_crawl.updated = false;
+        }
+      } else {
+        conference.rank_crawl.updated = false;
+      }
+    } catch (error) {
+      conference.rank_crawl.status = 'fetch_error';
+      conference.rank_crawl.error = String(error.message || error);
+      conference.rank_crawl.updated = false;
+    }
+
+    // Polite crawl spacing (CORE portal is a separate host)
+    await sleep(1000);
   }
 
   db.meta = db.meta || {};
   db.meta.last_updated = today;
+  db.meta.last_rank_update = today;
   db.meta.updated_by = 'automated-crawler';
 
   await fs.writeFile(DATA_PATH, `${JSON.stringify(db, null, 2)}\n`, 'utf8');
