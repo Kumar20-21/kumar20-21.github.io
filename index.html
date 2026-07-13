@@ -238,17 +238,48 @@
 
         <!-- Projects Page -->
         <div class="page" id="projects-page">
-            <section class="construction-section">
+            <section class="projects-section">
                 <div class="container">
-                    <div class="construction-content">
-                        <div class="construction-icon">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
+                    <div class="section__header">
+                        <h2 class="section__title">Projects</h2>
+                        <p class="section__subtitle">Ongoing research in market microstructure and quantitative finance</p>
+                    </div>
+
+                    <div class="projects__grid">
+                        <div class="card project-card">
+                            <div class="card__body">
+                                <div class="project-card__tags">
+                                    <span class="project-card__tag project-card__tag--funding">Funded by IITB-Citadel Lab</span>
+                                    <span class="project-card__tag project-card__tag--status">Ongoing</span>
+                                </div>
+                                <h3 class="project-card__title">Order Flow Toxicity</h3>
+                                <p class="project-card__desc">Researching order flow toxicity in NSE equity limit order book data: computing microstructure features (VPIN, net order flow decomposition by trader type, realized volatility, spread/depth) and a regime-adaptive toxicity label, with a dual-model (classification + quantile regression) approach to scoring adverse price moves and estimating order book resilience. Currently reviewing the literature, running early experiments, and formalizing the problem statement.</p>
+                                <div class="project-card__stack">
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">PyTorch</span>
+                                    <span class="skill-tag">Numpy</span>
+                                    <span class="skill-tag">Pandas</span>
+                                    <span class="skill-tag">PyArrow</span>
+                                </div>
+                            </div>
                         </div>
-                        <h2 class="construction-title">Projects</h2>
-                        <p class="construction-message">This page is under construction</p>
-                        <p class="construction-description">My project portfolio showcasing quantitative research implementations, trading algorithms, and machine learning applications will be available here soon.</p>
+
+                        <div class="card project-card">
+                            <div class="card__body">
+                                <div class="project-card__tags">
+                                    <span class="project-card__tag project-card__tag--funding">Personal Project</span>
+                                    <span class="project-card__tag project-card__tag--status">Ongoing</span>
+                                </div>
+                                <h3 class="project-card__title">Optimal Stopping in Option Pricing</h3>
+                                <p class="project-card__desc">Exploring the optimal stopping problem underlying American-style option pricing. Currently in the early, literature-review phase: building up the background theory, surveying how optimal stopping is solved in the existing literature, and identifying open gaps and related problems worth pursuing further.</p>
+                                <div class="project-card__stack">
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">PyTorch</span>
+                                    <span class="skill-tag">Numpy</span>
+                                    <span class="skill-tag">Pandas</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
