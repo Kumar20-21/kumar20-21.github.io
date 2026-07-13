@@ -1230,7 +1230,6 @@ class ConferenceTrackerManager {
         if (item.city) detailsHTML += `<p><strong>Location:</strong> ${item.city}${item.country ? `, ${item.country}` : ''}</p>`;
         if (item.link) detailsHTML += `<p><strong>Website:</strong> <a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.link}</a></p>`;
         if (item.crawl?.last_checked) detailsHTML += `<p><strong>Last Checked:</strong> ${item.crawl.last_checked}</p>`;
-        if (item.crawl?.status) detailsHTML += `<p><strong>Crawl Status:</strong> ${item.crawl.status}</p>`;
         if (item.notes || item.note) detailsHTML += `<p><em>${item.notes || item.note}</em></p>`;
         if (item._ics) detailsHTML += `<p><a href="${item._ics}" download="${item.id}.ics" rel="noopener noreferrer">Add to calendar (.ics)</a></p>`;
         details.innerHTML = detailsHTML;
