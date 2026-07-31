@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Static portfolio with integrated conference deadline tracker",
   "scripts": {
-    "update-deadlines": "node scripts/update-deadlines.js"
+    "update-deadlines": "node scripts/update-deadlines.js",
+    "generate:routes": "node scripts/generate-static-routes.js"
   }
 }
