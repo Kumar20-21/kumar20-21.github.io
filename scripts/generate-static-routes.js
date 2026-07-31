@@ -17,8 +17,8 @@ const BASE_URL = 'https://kumar20-21.github.io';
 const routes = [
   {
     path: 'aboutme',
-    title: 'About — Keshav Kumar | Quantitative Researcher & Academic',
-    description: 'About Keshav Kumar: quantitative researcher and academic working on reinforcement learning for high-frequency optimal execution, algorithmic trading, and risk management.',
+    title: 'About — Keshav Kumar | PhD Scholar, IIT Bombay',
+    description: 'About Keshav Kumar, PhD scholar at IIT Bombay: quantitative researcher and academic working on reinforcement learning for high-frequency optimal execution, algorithmic trading, and risk management.',
   },
   {
     path: 'projects',
