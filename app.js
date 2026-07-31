@@ -956,7 +956,7 @@ class ConferenceTrackerManager {
 
     async loadExternalData() {
         try {
-            const response = await fetch('data/deadlines.json', { cache: 'no-store' });
+            const response = await fetch('/data/deadlines.json', { cache: 'no-store' });
             if (!response.ok) return;
             const loadedData = await response.json();
             if (!loadedData || !Array.isArray(loadedData.conferences) || !Array.isArray(loadedData.journals)) {
