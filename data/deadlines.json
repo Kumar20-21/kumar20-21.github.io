@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_updated": "2026-07-13",
+    "last_updated": "2026-08-01",
     "maintainer": "Keshav Kumar",
     "notes": "Conference and journal tracker data for portfolio site",
     "updated_by": "automated-crawler",
-    "last_rank_update": "2026-07-13"
+    "last_rank_update": "2026-08-01"
   },
   "conferences": [
     {
@@ -28,7 +28,7 @@
       "note": "Official AAAI-27 paper deadline; track-specific deadlines may differ.",
       "skip_deadline_autodetect": true,
       "crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://aaai.org/conference/aaai/aaai-27/",
@@ -38,7 +38,7 @@
         "note": "Deadline auto-detection skipped (skip_deadline_autodetect); page renders dates via JS."
       },
       "rank_crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "status": "ok",
         "updated": false,
         "http_status": 200,
@@ -67,12 +67,12 @@
       "rank": "A",
       "note": "Official CFP dates.",
       "crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "status": "fetch_error",
         "error": "fetch failed"
       },
       "rank_crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -101,7 +101,7 @@
       "rank": "A+",
       "note": "Official IJCAI-ECAI 2026 main track dates.",
       "crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://2026.ijcai.org/important-dates/",
@@ -110,7 +110,7 @@
         "deadline_updated": false
       },
       "rank_crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -137,7 +137,7 @@
       "rank": "A+",
       "note": "Official COLT 2026 submission deadline.",
       "crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://learningtheory.org/colt2026/",
@@ -146,7 +146,7 @@
         "deadline_updated": false
       },
       "rank_crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -174,7 +174,7 @@
       "rank": "A+",
       "note": "Official ICML 2026 dates.",
       "crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://icml.cc/Conferences/2026/Dates",
@@ -183,7 +183,7 @@
         "deadline_updated": false
       },
       "rank_crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -211,7 +211,7 @@
       "rank": "A+",
       "note": "Official NeurIPS 2026 dates.",
       "crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://neurips.cc/Conferences/2026/Dates",
@@ -220,7 +220,7 @@
         "deadline_updated": false
       },
       "rank_crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -248,16 +248,16 @@
       "rank": "None",
       "note": "Official ICAIF 2026 paper deadline.",
       "crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://icaif2026.org/call-for-papers.html",
-        "detected_deadline_text": "Important Dates AOE = Anywhere on Earth (UTC-12) Subject Date Paper Submission Deadline August 2, 2026 Author Notification September 27, 2026 Main Conference 14-17 November 2026 Topic Areas ICAIF '26 invites high-quality research paper submissions th",
+        "detected_deadline_text": "Important Dates AOE = Anywhere on Earth (UTC-12) Subject Date Paper Submission Deadline August 2, 2026 Extended deadline: August 9, 2026 Author Notification September 27, 2026 Main Conference 14-17 November 2026 Topic Areas ICAIF '26 invites high-qua",
         "detected_deadline_value": "2026-08-02 23:59",
         "deadline_updated": false
       },
       "rank_crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "status": "not_found",
         "http_status": 200,
         "updated": false
@@ -283,13 +283,13 @@
       "rank": "A+",
       "note": "Official The Web Conference 2026 main-track dates.",
       "crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "http_status": 404,
         "status": "http_error",
         "resolved_url": "https://www2026.thewebconf.org/calls/main-track-research.html"
       },
       "rank_crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -317,13 +317,13 @@
       "rank": "A",
       "note": "Official AISTATS 2026 dates.",
       "crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "http_status": 404,
         "status": "http_error",
         "resolved_url": "https://aistats.org/aistats2026/cfp.html"
       },
       "rank_crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "status": "ok",
         "updated": false,
         "http_status": 200,
@@ -351,13 +351,13 @@
       "rank": "B",
       "note": "Official PAKDD 2026 dates page; extended paper deadline.",
       "crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "http_status": 404,
         "status": "http_error",
         "resolved_url": "https://www.pakdd2026.org/dates"
       },
       "rank_crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -385,13 +385,13 @@
       "rank": "A",
       "note": "Official UAI 2026 main-track deadline.",
       "crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "http_status": 404,
         "status": "http_error",
         "resolved_url": "https://www.auai.org/uai2026/dates.php"
       },
       "rank_crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "status": "ok",
         "updated": false,
         "http_status": 200,
@@ -421,13 +421,16 @@
       "rank": "A+",
       "note": "Official KDD 2026 cycle-2 deadline (cycle-1 also available).",
       "crawl": {
-        "last_checked": "2026-07-13",
-        "http_status": 404,
-        "status": "http_error",
-        "resolved_url": "https://kdd2026.kdd.org/call-for-papers/"
+        "last_checked": "2026-08-01",
+        "http_status": 200,
+        "status": "ok",
+        "resolved_url": "https://kdd2026.kdd.org/call-for-papers/",
+        "detected_deadline_text": null,
+        "detected_deadline_value": null,
+        "deadline_updated": false
       },
       "rank_crawl": {
-        "last_checked": "2026-07-13",
+        "last_checked": "2026-08-01",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
