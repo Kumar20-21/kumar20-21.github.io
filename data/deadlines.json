@@ -49,8 +49,8 @@
     {
       "title": "AAMAS",
       "full_name": "International Conference on Autonomous Agents and Multiagent Systems",
-      "year": 2026,
-      "id": "aamas26",
+      "year": 2027,
+      "id": "aamas27",
       "link": "https://warwick.ac.uk/fac/sci/dcs/aamas2027/",
       "deadline": "2025-10-08 23:59",
       "abstract_deadline": "2025-10-01 23:59",
@@ -300,8 +300,8 @@
     {
       "title": "AISTATS",
       "full_name": "International Conference on Artificial Intelligence and Statistics",
-      "year": 2026,
-      "id": "aistats26",
+      "year": 2027,
+      "id": "aistats27",
       "link": "https://virtual.aistats.org/",
       "deadline": "2025-10-02 23:59",
       "abstract_deadline": "2025-09-25 23:59",
@@ -315,12 +315,12 @@
         "RL"
       ],
       "rank": "A",
-      "note": "Official AISTATS 2026 dates.",
+      "note": "Official AISTATS 2027 dates.",
       "crawl": {
         "last_checked": "2026-08-01",
         "http_status": 404,
         "status": "http_error",
-        "resolved_url": "https://aistats.org/aistats2026/cfp.html"
+        "resolved_url": "https://virtual.aistats.org/"
       },
       "rank_crawl": {
         "last_checked": "2026-08-01",
