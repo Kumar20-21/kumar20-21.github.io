@@ -1,10 +1,11 @@
 {
   "meta": {
-    "last_updated": "2026-10-01",
+    "last_updated": "2026-10-26",
     "maintainer": "Keshav Kumar",
-    "notes": "Conference and journal tracker data for portfolio site",
-    "updated_by": "automated-crawler",
-    "last_rank_update": "2026-10-01"
+    "notes": "Conference and journal tracker data. Automated crawl status and manually verified source data are tracked separately.",
+    "updated_by": "manual-source-refresh; automated-crawler-on-next-run",
+    "last_rank_update": "2026-10-01",
+    "manual_data_updated": "2026-10-26"
   },
   "conferences": [
     {
@@ -44,7 +45,12 @@
         "http_status": 200,
         "core_source": "ICORE2026",
         "core_rank": "A*"
-      }
+      },
+      "series_id": "AAAI",
+      "source_discovery": {
+        "status": "configured"
+      },
+      "series_url": "https://aaai.org/conference/aaai/"
     },
     {
       "title": "AAMAS",
@@ -52,12 +58,12 @@
       "year": 2027,
       "id": "aamas27",
       "link": "https://warwick.ac.uk/fac/sci/dcs/aamas2027/",
-      "deadline": "2025-10-08 23:59",
-      "abstract_deadline": "2025-10-01 23:59",
+      "deadline": "2026-10-08 23:59",
+      "abstract_deadline": "2026-10-01 23:59",
       "timezone": "AoE",
-      "date": "May 25-29, 2026",
-      "city": "Limassol",
-      "country": "Cyprus",
+      "date": "May 3-7, 2027",
+      "city": "Hanoi",
+      "country": "Vietnam",
       "tags": [
         "RL",
         "MARL",
@@ -65,15 +71,15 @@
         "ML"
       ],
       "rank": "A",
-      "note": "Official CFP dates.",
+      "note": "Official AAMAS 2027 main-track dates; track-specific deadlines may differ.",
       "crawl": {
         "last_checked": "2026-10-01",
-        "status": "ok",
-        "http_status": 200,
-        "resolved_url": "https://warwick.ac.uk/fac/sci/dcs/aamas2027/",
+        "status": "not_checked",
+        "http_status": null,
         "detected_deadline_text": null,
         "detected_deadline_value": null,
-        "deadline_updated": false
+        "deadline_updated": false,
+        "note": "Stored deadline dates were checked against the official AAMAS 2027 website; run the crawler to refresh crawl metadata."
       },
       "rank_crawl": {
         "last_checked": "2026-10-01",
@@ -83,7 +89,13 @@
         "core_rank": "A",
         "updated": false
       },
-      "previous_rank": "A+"
+      "previous_rank": "A+",
+      "series_id": "AAMAS",
+      "series_url": "https://www.ifaamas.org/",
+      "source_discovery": {
+        "status": "configured"
+      },
+      "deadline_source": "https://warwick.ac.uk/fac/sci/dcs/aamas2027/"
     },
     {
       "title": "IJCAI",
@@ -120,7 +132,12 @@
         "core_source": "ICORE2026",
         "core_rank": "A*",
         "updated": false
-      }
+      },
+      "series_id": "IJCAI",
+      "source_discovery": {
+        "status": "configured"
+      },
+      "series_url": "https://www.ijcai.org/"
     },
     {
       "title": "COLT",
@@ -156,7 +173,12 @@
         "core_source": "ICORE2026",
         "core_rank": "A*",
         "updated": false
-      }
+      },
+      "series_id": "COLT",
+      "source_discovery": {
+        "status": "configured"
+      },
+      "series_url": "https://learningtheory.org/"
     },
     {
       "title": "ICML",
@@ -193,7 +215,53 @@
         "core_source": "ICORE2026",
         "core_rank": "A*",
         "updated": false
-      }
+      },
+      "series_id": "ICML",
+      "source_discovery": {
+        "status": "configured"
+      },
+      "series_url": "https://icml.cc/"
+    },
+    {
+      "title": "ICLR",
+      "full_name": "International Conference on Learning Representations",
+      "year": 2027,
+      "id": "iclr27",
+      "link": "https://iclr.cc/Conferences/2027/Dates",
+      "series_id": "ICLR",
+      "series_url": "https://iclr.cc/Conferences/FutureMeetings",
+      "deadline": "2026-09-25 23:59",
+      "abstract_deadline": "2026-09-18 23:59",
+      "timezone": "AoE",
+      "date": "April 26-30, 2027",
+      "city": "San Francisco",
+      "country": "USA",
+      "tags": [
+        "ML",
+        "DL",
+        "RL",
+        "Representation Learning"
+      ],
+      "rank": "A+",
+      "note": "Official ICLR 2027 dates; both submission deadlines are in Anywhere on Earth (AoE).",
+      "crawl": {
+        "last_checked": "2026-10-26",
+        "status": "not_checked",
+        "http_status": null,
+        "detected_deadline_text": null,
+        "detected_deadline_value": null,
+        "deadline_updated": false,
+        "note": "Seeded from the official ICLR 2027 dates page; run the crawler to refresh crawl metadata."
+      },
+      "rank_crawl": {
+        "last_checked": "2026-10-26",
+        "status": "not_checked",
+        "updated": false
+      },
+      "source_discovery": {
+        "status": "configured"
+      },
+      "deadline_source": "https://iclr.cc/Conferences/2027/Dates"
     },
     {
       "title": "NeurIPS",
@@ -230,6 +298,10 @@
         "core_source": "ICORE2026",
         "core_rank": "A*",
         "updated": false
+      },
+      "series_id": "NEURIPS",
+      "source_discovery": {
+        "status": "not_configured"
       }
     },
     {
@@ -265,7 +337,12 @@
         "status": "not_found",
         "http_status": 200,
         "updated": false
-      }
+      },
+      "series_id": "ICAIF",
+      "source_discovery": {
+        "status": "configured"
+      },
+      "series_url": "https://ai-finance.org/"
     },
     {
       "title": "WWW",
@@ -299,7 +376,12 @@
         "core_source": "ICORE2026",
         "core_rank": "A*",
         "updated": false
-      }
+      },
+      "series_id": "WWW",
+      "source_discovery": {
+        "status": "configured"
+      },
+      "series_url": "https://www.thewebconf.org/"
     },
     {
       "title": "AISTATS",
@@ -337,7 +419,12 @@
         "core_source": "ICORE2026",
         "core_rank": "A"
       },
-      "previous_rank": "A+"
+      "previous_rank": "A+",
+      "series_id": "AISTATS",
+      "source_discovery": {
+        "status": "configured"
+      },
+      "series_url": "https://aistats.org/"
     },
     {
       "title": "PAKDD",
@@ -371,7 +458,12 @@
         "core_rank": "B",
         "updated": false
       },
-      "previous_rank": "A"
+      "previous_rank": "A",
+      "series_id": "PAKDD",
+      "source_discovery": {
+        "status": "configured"
+      },
+      "series_url": "https://pakdd.org/"
     },
     {
       "title": "UAI",
@@ -405,7 +497,12 @@
         "core_source": "ICORE2026",
         "core_rank": "A"
       },
-      "previous_rank": "A+"
+      "previous_rank": "A+",
+      "series_id": "UAI",
+      "source_discovery": {
+        "status": "configured"
+      },
+      "series_url": "https://www.auai.org/"
     },
     {
       "title": "SIGKDD",
@@ -443,7 +540,12 @@
         "core_source": "ICORE2026",
         "core_rank": "A*",
         "updated": false
-      }
+      },
+      "series_id": "SIGKDD",
+      "source_discovery": {
+        "status": "configured"
+      },
+      "series_url": "https://kdd.org/"
     }
   ],
   "journals": [
