@@ -705,232 +705,7 @@ class ConferenceTrackerManager {
         this.lastUpdatedEl = document.getElementById('deadline-last-updated');
         this.DateTime = window.luxon?.DateTime;
         this.countdownTimer = null;
-
-        this.data = {
-            meta: {
-                last_updated: '2026-04-06',
-                maintainer: 'Keshav Kumar',
-                notes: 'Conference and journal tracker data for portfolio site'
-            },
-            conferences: [
-                {
-                    title: "AAMAS",
-                    full_name: "International Conference on Autonomous Agents and Multiagent Systems",
-                    year: 2026,
-                    id: "aamas26",
-                    link: "https://cyprusconferences.org/aamas2026/",
-                    deadline: "2025-10-08 23:59",
-                    abstract_deadline: "2025-10-01 23:59",
-                    timezone: "UTC-12",
-                    date: "May 25-29, 2026",
-                    city: "Cyprus",
-                    country: "Cyprus",
-                    tags: ["RL", "MARL", "Agents", "ML"],
-                    rank: "A+"
-                },
-                {
-                    title: "WWW",
-                    full_name: "International World Wide Web Conference",
-                    year: 2026,
-                    id: "www26",
-                    link: "https://www.thewebconf.org/",
-                    deadline: "2025-10-14 23:59",
-                    timezone: "AoE",
-                    date: "April-May 2026",
-                    city: "TBD",
-                    country: "TBD",
-                    tags: ["Web", "Social", "Networks"],
-                    rank: "A+",
-                    note: "Estimated dates based on historical patterns"
-                },
-                {
-                    title: "AISTATS",
-                    full_name: "International Conference on Artificial Intelligence and Statistics",
-                    year: 2026,
-                    id: "aistats26",
-                    link: "https://aistats.org/",
-                    deadline: "2025-10-10 23:59",
-                    timezone: "AoE",
-                    date: "Spring 2026",
-                    city: "TBD",
-                    country: "TBD",
-                    tags: ["ML", "Statistics", "RL"],
-                    rank: "A+",
-                    note: "Estimated dates based on historical patterns"
-                },
-                {
-                    title: "PAKDD",
-                    full_name: "Pacific-Asia Conference on Knowledge Discovery and Data Mining",
-                    year: 2026,
-                    id: "pakdd26",
-                    link: "https://pakdd.org/",
-                    deadline: "2025-12-14 23:59",
-                    timezone: "PST",
-                    date: "June 2026",
-                    city: "TBD",
-                    country: "TBD",
-                    tags: ["KDD", "DM", "ML"],
-                    rank: "A",
-                    note: "Estimated dates based on historical patterns"
-                },
-                {
-                    title: "ICML",
-                    full_name: "International Conference on Machine Learning",
-                    year: 2026,
-                    id: "icml26",
-                    link: "https://icml.cc/",
-                    deadline: "2026-01-30 23:59",
-                    abstract_deadline: "2026-01-23 23:59",
-                    timezone: "AoE",
-                    date: "July 2026",
-                    city: "TBD",
-                    country: "TBD",
-                    tags: ["ML", "RL", "DL"],
-                    rank: "A+",
-                    note: "Estimated dates based on historical patterns"
-                },
-                {
-                    title: "IJCAI",
-                    full_name: "International Joint Conference on Artificial Intelligence",
-                    year: 2026,
-                    id: "ijcai26",
-                    link: "https://ijcai.org/",
-                    deadline: "2026-01-23 23:59",
-                    abstract_deadline: "2026-01-16 23:59",
-                    timezone: "AoE",
-                    date: "August 2026",
-                    city: "TBD",
-                    country: "TBD",
-                    tags: ["AI", "RL", "ML"],
-                    rank: "A+",
-                    note: "Estimated dates based on historical patterns"
-                },
-                {
-                    title: "COLT",
-                    full_name: "Annual Conference on Computational Learning Theory",
-                    year: 2026,
-                    id: "colt26",
-                    link: "https://learningtheory.org/",
-                    deadline: "2026-02-06 17:00",
-                    timezone: "US/Eastern",
-                    date: "June-July 2026",
-                    city: "TBD",
-                    country: "TBD",
-                    tags: ["LT", "RL", "Theory"],
-                    rank: "A+",
-                    note: "Estimated dates based on historical patterns"
-                },
-                {
-                    title: "UAI",
-                    full_name: "Conference on Uncertainty in Artificial Intelligence",
-                    year: 2026,
-                    id: "uai26",
-                    link: "https://www.auai.org/",
-                    deadline: "2026-02-10 23:59",
-                    timezone: "AoE",
-                    date: "July 2026",
-                    city: "TBD",
-                    country: "TBD",
-                    tags: ["Uncertainty", "Probability", "RL"],
-                    rank: "A+",
-                    note: "Estimated dates based on historical patterns"
-                },
-                {
-                    title: "SIGKDD",
-                    full_name: "ACM International Conference on Knowledge Discovery and Data Mining",
-                    year: 2026,
-                    id: "kdd26",
-                    link: "https://kdd.org/",
-                    deadline: "2026-02-10 23:59",
-                    abstract_deadline: "2026-02-03 23:59",
-                    timezone: "AoE",
-                    date: "August 2026",
-                    city: "TBD",
-                    country: "TBD",
-                    tags: ["DM", "ML", "RL"],
-                    rank: "A+",
-                    note: "Estimated dates based on historical patterns"
-                },
-                {
-                    title: "ICAIF",
-                    full_name: "ACM International Conference on AI in Finance",
-                    year: 2026,
-                    id: "icaif26",
-                    link: "https://ai-finance.org/",
-                    deadline: "2026-06-15 23:59",
-                    timezone: "AoE",
-                    date: "November 2026",
-                    city: "TBD",
-                    country: "TBD",
-                    tags: ["Finance", "AI", "RL", "Quant"],
-                    rank: "None",
-                    note: "Finance-specific AI conference; not CORE ranked but highly relevant"
-                },
-                {
-                    title: "NeurIPS",
-                    full_name: "Advances in Neural Information Processing Systems",
-                    year: 2026,
-                    id: "neurips26",
-                    link: "https://neurips.cc/",
-                    deadline: "2026-05-15 23:59",
-                    abstract_deadline: "2026-05-11 23:59",
-                    timezone: "AoE",
-                    date: "December 2026",
-                    city: "TBD",
-                    country: "TBD",
-                    tags: ["ML", "DL", "RL"],
-                    rank: "A+",
-                    note: "Estimated dates based on historical patterns"
-                }
-            ],
-            journals: [
-                {
-                    title: "Journal of Finance",
-                    id: "jfinance",
-                    submission_type: "continuous",
-                    link: "https://onlinelibrary.wiley.com/journal/15406261",
-                    tags: ["quantitative-finance", "asset-pricing", "finance"],
-                    notes: "Flagship finance journal for empirical and theoretical quantitative finance work.",
-                    rank: "Q1"
-                },
-                {
-                    title: "Journal of Machine Learning Research",
-                    id: "jmlr",
-                    submission_type: "continuous",
-                    link: "https://www.jmlr.org/",
-                    tags: ["machine-learning", "RL", "open-access"],
-                    notes: "Open-access flagship ML journal, including reinforcement-learning research.",
-                    rank: "Q1"
-                },
-                {
-                    title: "IEEE Transactions on Neural Networks and Learning Systems",
-                    id: "ieeetnnls",
-                    submission_type: "continuous",
-                    link: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385",
-                    tags: ["neural-networks", "deep-learning", "RL", "multi-agent"],
-                    notes: "High-impact venue for RL, deep-learning, and multi-agent algorithms.",
-                    rank: "Q1"
-                },
-                {
-                    title: "ACM Computing Surveys",
-                    id: "acmcsur",
-                    submission_type: "continuous",
-                    link: "https://dl.acm.org/journal/csur",
-                    tags: ["surveys", "RL", "multi-agent", "finance-applications"],
-                    notes: "Authoritative survey journal.",
-                    rank: "Q1"
-                },
-                {
-                    title: "Expert Systems with Applications",
-                    id: "eswa",
-                    submission_type: "continuous",
-                    link: "https://www.journals.elsevier.com/expert-systems-with-applications",
-                    tags: ["AI-applications", "RL", "financial-systems", "trading"],
-                    notes: "Leading venue for AI applications in trading and financial decision systems.",
-                    rank: "Q1"
-                }
-            ]
-        };
+        this.data = { meta: {}, conferences: [], journals: [] };
 
         this.init();
     }
@@ -940,8 +715,13 @@ class ConferenceTrackerManager {
             return;
         }
 
-        await this.loadExternalData();
+        const loaded = await this.loadExternalData();
         this.renderLastUpdated();
+
+        if (!loaded) {
+            this.cardsContainer.innerHTML = '<p class="deadline-empty">Conference data could not be loaded. Please refresh later.</p>';
+            return;
+        }
 
         if (!this.DateTime) {
             this.cardsContainer.innerHTML = '<p class="deadline-empty">Tracker could not initialize (missing date library).</p>';
@@ -956,15 +736,22 @@ class ConferenceTrackerManager {
 
     async loadExternalData() {
         try {
-            const response = await fetch('/data/deadlines.json', { cache: 'no-store' });
-            if (!response.ok) return;
+            const dataUrl = new URL('/data/deadlines.json', window.location.origin);
+            dataUrl.searchParams.set('_', String(Date.now()));
+            const response = await fetch(dataUrl, { cache: 'no-store' });
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
             const loadedData = await response.json();
-            if (!loadedData || !Array.isArray(loadedData.conferences) || !Array.isArray(loadedData.journals)) {
-                return;
+            if (!loadedData || !Array.isArray(loadedData.conferences)) {
+                throw new Error('Invalid schema: conferences array missing');
             }
-            this.data = loadedData;
+            this.data = {
+                ...loadedData,
+                journals: Array.isArray(loadedData.journals) ? loadedData.journals : []
+            };
+            return true;
         } catch (error) {
-            console.warn('Conference tracker data fetch failed, using bundled data.', error);
+            console.error('Conference tracker data fetch failed:', error);
+            return false;
         }
     }
 
