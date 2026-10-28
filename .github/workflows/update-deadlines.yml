@@ -3,15 +3,20 @@ name: Update Conference Deadlines & Ranks
 on:
   workflow_dispatch:
   schedule:
-    # Quarterly schedule (approx every 90 days): Jan/Apr/Jul/Oct 1st at 03:00 UTC
-    - cron: '0 3 1 1,4,7,10 *'
+    # Daily at 07:00 UTC. GitHub may delay scheduled workflows during high load.
+    - cron: '00 7 * * *'
 
 permissions:
   contents: write
 
+concurrency:
+  group: conference-deadline-refresh
+  cancel-in-progress: false
+
 jobs:
   crawl-and-update:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
@@ -24,12 +29,13 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Run deadline & rank crawler
+      - name: Run deadline, edition-discovery, and rank crawler
         run: node scripts/update-deadlines.js
 
       - name: Verify crawl health
         env:
           MIN_CRAWL_SUCCESS: "1"
+          MIN_CRAWL_SUCCESS_RATE: "0.50"
         run: node scripts/verify-crawl-health.js data/deadlines.json
 
       - name: Commit and push changes
@@ -41,5 +47,5 @@ jobs:
             echo "No deadline updates to commit"
             exit 0
           fi
-          git commit -m "chore: automated deadline and rank data refresh"
+          git commit -m "chore: automated deadline and edition refresh"
           git push
