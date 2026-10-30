@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_updated": "2026-10-29",
+    "last_updated": "2026-10-30",
     "maintainer": "Keshav Kumar",
     "notes": "Conference and journal tracker data. Automated crawl status and manually verified source data are tracked separately.",
     "updated_by": "automated-crawler",
-    "last_rank_update": "2026-10-29",
+    "last_rank_update": "2026-10-30",
     "manual_data_updated": "2026-10-26",
     "crawl_summary": {
       "checked": 13,
@@ -13,7 +13,7 @@
       "detectedAbstract": 2,
       "skipped": 1,
       "failed": 4,
-      "editionUrlsUpdated": 1
+      "editionUrlsUpdated": 0
     }
   },
   "conferences": [
@@ -38,7 +38,7 @@
       "note": "Official AAAI-27 paper deadline; track-specific deadlines may differ.",
       "skip_deadline_autodetect": true,
       "crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://aaai.org/conference/aaai/aaai-27/",
@@ -48,7 +48,7 @@
         "note": "Automatic deadline detection disabled for this source; stored deadline preserved."
       },
       "rank_crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "updated": false,
         "http_status": 200,
@@ -58,7 +58,7 @@
       "series_id": "AAAI",
       "source_discovery": {
         "status": "no_candidate",
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "target_year": 2027,
         "updated": false
@@ -86,12 +86,12 @@
       "rank": "A",
       "note": "Official AAMAS 2027 main-track dates; track-specific deadlines may differ.",
       "crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "http_status": 200,
         "detected_deadline_text": "Deadline for Posting Workshop Call for Papers: 9 Dec 2026 Deadline for Publishing Workshop Websites : 9 Dec 2026 Recommended Workshop Paper Submission Deadline : 24 Jan 2027",
         "detected_deadline_value": "2026-12-09 23:59",
-        "deadline_updated": true,
+        "deadline_updated": false,
         "resolved_url": "https://warwick.ac.uk/fac/sci/dcs/aamas2027/",
         "canonical_url": "https://warwick.ac.uk/fac/sci/dcs/aamas2027/",
         "detected_abstract_deadline_text": "Important Dates Main Track: Abstract submission: 1 Oct 2026",
@@ -99,7 +99,7 @@
         "abstract_deadline_updated": false
       },
       "rank_crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -111,7 +111,7 @@
       "series_url": "https://www.ifaamas.org/",
       "source_discovery": {
         "status": "no_candidate",
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "target_year": 2027,
         "updated": false
@@ -139,7 +139,7 @@
       "rank": "A+",
       "note": "Automatically advanced to the verified 2027 edition. Confirm venue and event dates on the official website.",
       "crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://2027.ijcai.org/",
@@ -152,7 +152,7 @@
         "abstract_deadline_updated": false
       },
       "rank_crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -161,13 +161,13 @@
       },
       "series_id": "IJCAI",
       "source_discovery": {
-        "status": "advanced_to_next_edition",
-        "last_checked": "2026-10-29",
+        "status": "verified",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "candidate_url": "https://2027.ijcai.org/",
         "target_year": 2027,
         "candidate_http_status": 200,
-        "updated": true
+        "updated": false
       },
       "series_url": "https://www.ijcai.org/",
       "previous_edition": {
@@ -197,7 +197,7 @@
       "rank": "A+",
       "note": "Official COLT 2026 submission deadline.",
       "crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://learningtheory.org/colt2026/",
@@ -210,7 +210,7 @@
         "note": "Page fetched, but no supported deadline candidate was found; stored deadlines were preserved."
       },
       "rank_crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -220,7 +220,7 @@
       "series_id": "COLT",
       "source_discovery": {
         "status": "next_edition_found_deadline_unverified",
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "candidate_url": "http://learningtheory.org/colt2027/",
         "target_year": 2027,
@@ -248,7 +248,7 @@
       "rank": "A+",
       "note": "Official ICML 2026 dates.",
       "crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://icml.cc/Conferences/2026/Dates",
@@ -261,7 +261,7 @@
         "note": "Page fetched, but no supported deadline candidate was found; stored deadlines were preserved."
       },
       "rank_crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -271,7 +271,7 @@
       "series_id": "ICML",
       "source_discovery": {
         "status": "next_edition_not_published",
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "target_year": 2027,
         "updated": false
@@ -301,7 +301,7 @@
       "rank": "A+",
       "note": "Official ICLR 2027 dates; both submission deadlines are in Anywhere on Earth (AoE).",
       "crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "http_status": 200,
         "detected_deadline_text": null,
@@ -314,7 +314,7 @@
         "abstract_deadline_updated": false
       },
       "rank_crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "updated": false,
         "http_status": 200,
@@ -323,7 +323,7 @@
       },
       "source_discovery": {
         "status": "no_candidate",
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "target_year": 2027,
         "updated": false
@@ -350,7 +350,7 @@
       "rank": "A+",
       "note": "Official NeurIPS 2026 dates.",
       "crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://neurips.cc/Conferences/2026/Dates",
@@ -363,7 +363,7 @@
         "note": "Page fetched, but no supported deadline candidate was found; stored deadlines were preserved."
       },
       "rank_crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -395,7 +395,7 @@
       "rank": "None",
       "note": "Official ICAIF 2026 paper deadline.",
       "crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://icaif2026.org/call-for-papers/",
@@ -408,7 +408,7 @@
         "abstract_deadline_updated": false
       },
       "rank_crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "not_found",
         "http_status": 200,
         "updated": false
@@ -416,7 +416,7 @@
       "series_id": "ICAIF",
       "source_discovery": {
         "status": "next_edition_not_published",
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "target_year": 2027,
         "updated": false
@@ -443,13 +443,13 @@
       "rank": "A+",
       "note": "Official The Web Conference 2026 main-track dates.",
       "crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 404,
         "status": "http_error",
         "resolved_url": "https://www2026.thewebconf.org/calls/main-track-research.html"
       },
       "rank_crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -459,7 +459,7 @@
       "series_id": "WWW",
       "source_discovery": {
         "status": "fetch_error",
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "error": "fetch failed",
         "updated": false
       },
@@ -485,7 +485,7 @@
       "rank": "A",
       "note": "Official AISTATS 2027 dates.",
       "crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "status": "ok",
         "resolved_url": "https://virtual.aistats.org/",
@@ -499,7 +499,7 @@
         "note": "Page fetched, but no supported deadline candidate was found; stored deadlines were preserved."
       },
       "rank_crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "updated": false,
         "http_status": 200,
@@ -510,7 +510,7 @@
       "series_id": "AISTATS",
       "source_discovery": {
         "status": "no_candidate",
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "target_year": 2027,
         "updated": false
@@ -536,13 +536,13 @@
       "rank": "B",
       "note": "Official PAKDD 2026 dates page; extended paper deadline.",
       "crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 404,
         "status": "http_error",
         "resolved_url": "https://www.pakdd2026.org/dates"
       },
       "rank_crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -553,7 +553,7 @@
       "series_id": "PAKDD",
       "source_discovery": {
         "status": "next_edition_not_published",
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "target_year": 2027,
         "updated": false
@@ -579,13 +579,13 @@
       "rank": "A",
       "note": "Official UAI 2026 main-track deadline.",
       "crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 404,
         "status": "http_error",
         "resolved_url": "https://www.auai.org/uai2026/dates.php"
       },
       "rank_crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "updated": false,
         "http_status": 200,
@@ -596,7 +596,7 @@
       "series_id": "UAI",
       "source_discovery": {
         "status": "next_edition_not_published",
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "target_year": 2027,
         "updated": false
@@ -624,7 +624,7 @@
       "rank": "A+",
       "note": "Official KDD 2026 cycle-2 deadline (cycle-1 also available).",
       "crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 404,
         "status": "http_error",
         "resolved_url": "https://kdd2026.kdd.org/call-for-papers/",
@@ -633,7 +633,7 @@
         "deadline_updated": false
       },
       "rank_crawl": {
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "status": "ok",
         "http_status": 200,
         "core_source": "ICORE2026",
@@ -643,7 +643,7 @@
       "series_id": "SIGKDD",
       "source_discovery": {
         "status": "next_edition_not_published",
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-10-30",
         "http_status": 200,
         "target_year": 2027,
         "updated": false
